@@ -97,7 +97,7 @@ Which two Food Categories show the highest energy per weight?
 
 ### Exercise 8
 
-In [this dataset](./files_12_data_visualization_exercises/exercise08/ChickWeight.csv) you can find Chick Weight data. It shows the weight (in grams) on day 42 for various chickens that were fed with various diets during 42 days.
+In [this dataset](./files_13_data_visualization_exercises/exercise08/ChickWeight.csv) you can find Chick Weight data. It shows the weight (in grams) on day 42 for various chickens that were fed with various diets during 42 days.
 
 Create a radar chart for the various diets on day 42.  
 Calculate the average weight per diet.
@@ -111,7 +111,7 @@ Which two chickens on which diet generated the highest weight gains?
 
 ### Exercise 9
 
-Have look at the data [here](./files_12_data_visualization_exercises/exercise09/data.csv)
+Have look at the data [here](./files_13_data_visualization_exercises/exercise09/data.csv)
 It contains data about Potassium and Sodium content (in mg/100 g) as well as calories (in kcal/100 g).  
 
 The World Health Organization (WHO) recommends ingestion of less than 2000 mg of sodium per day and more than 3510 mg of potassium per day, resulting in a Na-to-K ratio of ≤1.0, which is believed to be optimal for preserving cardiovascular health.
@@ -130,7 +130,7 @@ Which two food items would be considered most healthy food items based on the in
 
 ### Exercise 10
 
-In [this dataset](./files_12_data_visualization_exercises/exercise10/meat-production-tonnes.csv) you can find World wide meat production from 1961 to 2021 expressed in tonnes. It includes cattle, poultry, sheep/mutton, goat, pig meat, and wild game (source: https://ourworldindata.org/meat-production). 
+In [this dataset](./files_13_data_visualization_exercises/exercise10/meat-production-tonnes.csv) you can find World wide meat production from 1961 to 2021 expressed in tonnes. It includes cattle, poultry, sheep/mutton, goat, pig meat, and wild game (source: https://ourworldindata.org/meat-production). 
 
 Create a XY-scatter plot with the total production of meat (in tonnes) plotted against time for the Asian continent.  
 
