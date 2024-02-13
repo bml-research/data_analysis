@@ -529,7 +529,6 @@ p
 ggplot2 offers many more plot types. Way beyond the capabilities of Excel.
 For an example gallery of supported plot types in ggplot2 see [this link](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html). 
 In addition, other packages exist for even more plotting capabilities in R.
-See this [web page](https://blog.digitalogy.co/list-of-top-r-libraries-for-data-visualization/) for an overview.
 
 
 >This web page is distributed under the terms of the Creative Commons Attribution License which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.

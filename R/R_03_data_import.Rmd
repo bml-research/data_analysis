@@ -293,7 +293,7 @@ And load it as follows:
 library(readxl)
 ```
 
-[Here](./files_03_data_import/file07_food_composition.xlsx) you can find an example of an Excel file.
+[Here](./files_03_data_import/file08_food_composition.xlsx) you can find an example of an Excel file.
 
 And here is how you can load in to a tibble:
 
