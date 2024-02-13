@@ -45,7 +45,6 @@
 - [food-lovers-global-cuisine-preferences-survey](https://www.kaggle.com/datasets/themadprogramer/food-lovers-global-cuisine-preferences-survey)
 - [food-choices](https://www.kaggle.com/datasets/borapajo/food-choices)
 - [oreo-flavors-tastetest-ratings](https://www.kaggle.com/datasets/rtatman/oreo-flavors-tastetest-ratings)
-- [wine-taste](https://www.kaggle.com/datasets/matheusgodoy/wine-taste)
 - [milk-grading](https://www.kaggle.com/datasets/prudhvignv/milk-grading)
 - [beer-profile-and-ratings-data-set](https://www.kaggle.com/datasets/ruthgn/beer-profile-and-ratings-data-set)
 

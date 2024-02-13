@@ -112,7 +112,7 @@ These are fairly easy to load in Excel as well:
 Loading this file in Excel is easy as it will recognize the tabs.
 However, if in case you run into trouble, you can may need to help with file loading
 
-Consider the [this](./files/file01.txt) file.
+Consider the this file:
 
 
 ![Data loaded](./pics_02_data_import/07.png)
