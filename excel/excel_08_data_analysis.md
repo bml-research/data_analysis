@@ -220,7 +220,7 @@ These are just some examples. Use the online resources or the recommended Excel 
 Excel has many functions for statistics like `STDEV.P`, `T.TEST`, `F.TEST` and `CHISQ.DIST.RT`. 
 A comprehensive list can be found [here](https://support.microsoft.com/en-us/office/statistical-functions-reference-624dac86-a375-4435-bc25-76d659719ffd)
 
-In addition, Excel has a a [statistics analysis pack](https://support.microsoft.com/en-us/office/statistical-functions-reference-624dac86-a375-4435-bc25-76d659719ffd) available as plugin.
+In addition, Excel has a a [statistics analysis pack](https://support.microsoft.com/en-gb/office/load-the-analysis-toolpak-in-excel-6a63e598-cd6d-42e3-9317-6b40ba1a66b4) available as plugin.
 
 
 Here is an example of a diet intervention. Because the same subjects are measured twice, a paired T-test was used. The is a one-tailed test as we are looking for a weight reduction (alpha = 0.05)
