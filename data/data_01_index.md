@@ -24,7 +24,7 @@ In statistics and data analysis, there are several ways to categorize different 
 - ordinal 
 
 Nominal data is data that can be placed into categories without any inherent ordering. For example, "eye color" is a nominal data type, as there is no inherent order to the different categories (e.g. blue, brown, green, etc.).  
-Ordinal data, on the other hand, is data that can be placed into categories and those categories have an order to them. Example ordinal data can be a "rating scale" in questionares, like "unsatisfied", "satisfied" and "very satisfied". 
+Ordinal data, on the other hand, is data that can be placed into categories and those categories have an order to them. Example ordinal data can be a "rating scale" in questionnaires, like "unsatisfied", "satisfied" and "very satisfied". 
 
 **Numerical data**, also known as quantitative data, is data that can be measured and represented by numbers. There are two main types of numerical data: 
 - discrete
@@ -57,9 +57,9 @@ It is important to note that ratio data allows for meaningful statement about th
 
 ### Calculations and visualization methods on different data types
 
-It is not possible to perform all types of calculations, comparisons and visualizations on all data types. As explained above, you can not perform ratio comparisons on interval data. Obviously, you can not (directly) create bar graphs or histograms on nominal or ordinal data. However, you can calculate frequencies and a proportion (by dividing the frequency by the total number of events) on nominal and ordinal data. Proper visualisations of nominal and ordinal data are Pie Charts and Bar Charts. Because nominal data is categorical data that can take on a limited number of values that don't have an inherent order or numerical meaning, some types of visualizations that are used to represent quantitative data, such as continuous data, are not suitable for representing nominal data. 
+It is not possible to perform all types of calculations, comparisons and visualizations on all data types. As explained above, you can not perform ratio comparisons on interval data. Obviously, you can not (directly) create bar graphs or histograms on nominal or ordinal data. However, you can calculate frequencies and a proportion (by dividing the frequency by the total number of events) on nominal and ordinal data. Proper visualizations of nominal and ordinal data are Pie Charts and Bar Charts. Because nominal data is categorical data that can take on a limited number of values that don't have an inherent order or numerical meaning, some types of visualizations that are used to represent quantitative data, such as continuous data, are not suitable for representing nominal data. 
 
-Some examples of visualization types that are not suitible on certain data types are listed below:
+Some examples of visualization types that are not suitable on certain data types are listed below:
 
 **Nominal data:**
 
@@ -93,7 +93,7 @@ These are some examples of visualizations that are not suitable for discrete dat
 
 **Continous data**
 
-Even continuous data has some types of visualization that is not suitable or recommanded. Some examples include:
+Even continuous data has some types of visualization that is not suitable or recommended. Some examples include:
 
 - Stacked bar chart: This visualization is typically used to show the distribution of different categories within each category. Because continuous data is not necessarily divided into distinct categories, a stacked bar chart doesn't make sense to use.  
 
@@ -104,7 +104,7 @@ Even continuous data has some types of visualization that is not suitable or rec
 
 ### Data tables
 
-Scientist often organise data in a table such as:
+Scientist often organize data in a table such as:
 
 |Public Food Key   |Food Profile ID  |Derivation   |Food Name                     |
 |:-----------------|:----------------|:------------|:-----------------------------|
@@ -118,9 +118,9 @@ The text "Public Food Key", "Food Profile ID", "Derivation" and "Food Name" are 
 
 Columns:
 
-`Columns` are also called `variables` or `features`. For example, this first column contains the public food key, a unique identifyer for each food item. The third column represents information about the type of food but also contains information about the processing. You could argue that this column should be be separated in two columns (food name and processing).
+`Columns` are also called `variables` or `features`. For example, this first column contains the public food key, a unique identifier for each food item. The third column represents information about the type of food but also contains information about the processing. You could argue that this column should be be separated in two columns (food name and processing).
 
-`Values` are found on the cross-section of columns and rows in csv files or other tabulated text file formats. In Excell, each cell contains a value. Values may represent tekst strings, whole numbers (integers), decimal values (floats) or booleans (true, false). Other values do excist as well but are beyond the scope of this course.
+`Values` are found on the cross-section of columns and rows in csv files or other tabulated text file formats. In Excel, each cell contains a value. Values may represent text strings, whole numbers (integers), decimal values (floats) or booleans (true, false). Other values do exist as well but are beyond the scope of this course.
 
 
 >Do not put records in columns and variables in rows like this:
@@ -141,7 +141,7 @@ Columns:
 
 ### Untidy data versus tidy data:
 
-In data science, a lot of time is spent on data cleaning and data organisation.
+In data science, a lot of time is spent on data cleaning and data organization.
 A more standardized way to structure data is the [tidy data format](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html).
 
 
@@ -187,7 +187,7 @@ Another example of untidy data:
 As you can see in this example, not each variable has its own column and as a result, not each observation has its own row.
 
 But even organization of the data from Kaggle can be improved.
-The column food name can arguable be better splitted in a column `Food name` and a column `Processing`:
+The column food name can arguable be better split in a column `Food name` and a column `Processing`:
 
 |Public Food Key   |Food Profile ID  |Derivation   |Food Name     |Processing     |
 |:-----------------|:----------------|:------------|:-------------|:--------------|
