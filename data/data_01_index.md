@@ -15,7 +15,7 @@
 
 ## Introduction
 
-### Categorial data and numerical data
+### Categorical data and numerical data
 
 In statistics and data analysis, there are several ways to categorize different types of data. Two main categories of data are categorical and numerical.
 
@@ -91,7 +91,7 @@ Some examples of visualization that are not suitable for discrete data are:
 
 These are some examples of visualizations that are not suitable for discrete data, but there are many other visualizations that can be used to represent discrete data. Examples of visualizations that are well suited for discrete data include bar charts, dot plots, pie charts, and stacked bar charts. These visualizations can help to effectively display the frequency or count of specific values in a dataset.
 
-**Continous data**
+**Continuous data**
 
 Even continuous data has some types of visualization that is not suitable or recommended. Some examples include:
 
@@ -226,7 +226,7 @@ The Excel and R section contain more about the particular data types.
 ---
 
 
-### Exersises and Solutions:
+### Exercises and Solutions:
 
 
 - [Exercises](./data_02_exercises.md)
