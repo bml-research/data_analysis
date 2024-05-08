@@ -21,11 +21,11 @@ Decribe for the following columns what kind of data it holds. Also describe the 
 |:----------------|:---------------|:----------------|
 |Food Name        |                |                 |
 |Fat factor       |                |                 |
-|Analysed Portion |                |                 |
+|Analyzed Portion |                |                 |
 
 Food Name: nominal data, nominal scale
 Fat factor: continuous, ratio scale
-Analysed Portion: continuous, ratio scale
+Analyzed Portion: continuous, ratio scale
 
 
 ### Exercise 2
@@ -36,7 +36,7 @@ Item: Granola, Chicken Leg, Tofu, Salmon, Avocados
 Calories (kcal) per 100 g: 489, 184, 144, 206, 160
 
 Create a data table of the above data.
-Make sure that the observations (or records) and variables (or features) are organised appropriately. Also sort the data based on the amount of calories.
+Make sure that the observations (or records) and variables (or features) are organized appropriately. Also sort the data based on the amount of calories.
 
 ### Exercise 3
 
@@ -59,7 +59,7 @@ Remember that there are three interrelated rules which make a dataset tidy:
 - Each observation must have its own row.
 - Each value must have its own cell.
 
-Convert the datatable below to a datatable that is tidy.
+Convert the data table below to a data table that is tidy.
 
 Alcohol consumption in litres per year over time.
 
@@ -83,9 +83,9 @@ Another untidy data table. Describe which of the three interrelated rules which 
 
 ### Exercise 6
 
-Another untidy data table. Describe which of the three interrelated rules which make a dataset tidy have not been met and convert the data table to a data table that is tidy.
+Here we have a tidy data table data table. Spread it in order to make it wider (and untidy).
 
-|Country        |Year|Consumtion type    |Volume (l)|
+|Country        |Year|Consumption type   |Volume (l)|
 |:--------------|:---|:------------------|---------:|
 |Albania        |1996|Alcohol            |2.59      |
 |Albania        |1996|Bottled water      |120       |

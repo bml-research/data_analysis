@@ -16,7 +16,7 @@
 |:----------------|:---------------|:----------------|
 |Food Name        |Nominal         |Nominal          |
 |Fat factor       |Continuous      |Ratio            |
-|Analysed Portion |Continuous      |Ratio            |
+|Analyzed Portion |Continuous      |Ratio            |
 
 
 ### Exercise 2
@@ -56,11 +56,11 @@ The rule "Each variable must have its own column." has not been met. In the unti
 |Algeria        |1996|0.27      |
 |Algeria        |2016|0.90      |
 |Netherlands    |1996|9.80      |
-|Metherlands    |2016|8.70      |
+|Netherlands    |2016|8.70      |
 
 ### Exercise 5
 
-The rule "Each value must have its own cell." has not been met. In the untidy table, there are two values related to the volume in one cell. Thus, we need to seperate them over two records (rows) in order to solve this. Note that we should not seperate these values in two columns as this will create the situation as shown in Exercise 4.
+The rule "Each value must have its own cell." has not been met. In the untidy table, there are two values related to the volume in one cell. Thus, we need to separate them over two records (rows) in order to solve this. Note that we should not separate these values in two columns as this will create the situation as shown in Exercise 4.
 
 |Country        |Year|Volume (l)|
 |:--------------|:---|---------:|
@@ -73,9 +73,7 @@ The rule "Each value must have its own cell." has not been met. In the untidy ta
 
 ### Exercise 6
 
-In this case, an observation is scattered across multiple rows.
-An observation is a country in a year, but each observation is spread across two rows.
-We can solve this by defining two columns for Alcohol and Bottled water.
+The wider data table:
 
 |Country        |Year|Volume Alcohol (l) |Volume Bottled Water (l)|
 |:--------------|:---|------------------:|-----------------------:|
