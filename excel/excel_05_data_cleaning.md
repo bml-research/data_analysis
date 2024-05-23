@@ -171,7 +171,7 @@ So convert to #N/A:
 As a result, the `SUM` function does not work. It does notify you that there are missing data. Now you can deal with the #N/A using the `SUMIF` function:
 
 ![dealing with na](./pics_05_data_cleaning/fig22.png)
-*<sub>Figure 22: The `SUMIF` function does not work when #N/A is included.</sub>*
+*<sub>Figure 22: The `SUMIF` function does work when #N/A is included.</sub>*
 
 In the above example, `<>` is a shorthand for the `NOT` operator. So the formula reads as: Only sum cells that are not equal to #N/A and ignore the #N/A's. This is a strategy that is very similar to what is used in R and Python. Your are dealing with missing data in an explicit way instead of implicit.
 
