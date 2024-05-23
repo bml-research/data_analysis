@@ -122,16 +122,15 @@ As you can see, it uses the `@` symbol as the column separator.
 It will not easily load in Excel:
 
 |![Data loaded](./pics_02_data_import/08.png)
-*<sub>Figure 8: a text file loaded in Excel that uses the pipe symbol `@` symbol as a column separator</sub>*
+*<sub>Figure 8: a text file loaded in Excel that uses the `@` symbol as a column separator</sub>*
 
 You need to specify the file type (UTF-8). But even then it will not load well:
 
 |![Data loaded](./pics_02_data_import/09.png)
 *<sub>Figure 9: a difficult file to load in Excel</sub>*
 
-
-However, using the "Text to columns" feature, you can easily separate the columns.
-Than, remove the unwanted top rows and format as table.
+However, using the "Transform Data" feature, you can easily separate the columns by pressing "Split Column (by Delimiter)". Use custom for "@".
+Than, click "Use First Row as Headers" and click "Close & Load".
 
 |![Data loaded](./pics_02_data_import/10.png)
 *<sub>Figure 10: a difficult file loaded in Excel</sub>*
