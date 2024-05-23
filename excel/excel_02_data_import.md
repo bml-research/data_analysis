@@ -32,7 +32,7 @@ Regardless of the specific format used, it is important to ensure that the data 
 
 The first step in data import is to check your data using a text editor.
 There are many text editors and all operating systems do have a default build-in text editor.
-However, I do recommend [Visual Studio Code](https://code.visualstudio.com/) as it allows you to view and manipulate text files on all main operating systems. In addition, it features the rainbow csv plugin that allows you to see the csv file with color highlighting to discriminate between the columns (this only works for comma separated files).
+However, I do recommend [Visual Studio Code](https://code.visualstudio.com/) as it allows you to view and manipulate text files on all main operating systems. In addition, it features the [rainbow csv plugin](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) that allows you to see the csv file with color highlighting to discriminate between the columns (this only works for comma separated files).
 
 Open your text file and check how the data are organized.
 
