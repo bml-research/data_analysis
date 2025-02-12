@@ -38,14 +38,14 @@ We can use the formula:
 
 $K = (F − 32) × \frac{5}{9} + 273.15$  
 
-So will will get the following data:
+So we will get the following data:  
 
-recommended minimum temperature	145°F = 336 K
-medium	160°F = 344 K
-well done	170°F = 350 K
+recommended minimum temperature	145°F = 336 K  
+medium	160°F = 344 K  
+well done	170°F = 350 K  
 
-Ratio medium/recommended minimum temperature = 344/336 = 1.025
-Ratio well done/recommended minimum temperature = 350/336 = 1.041
+Ratio medium/recommended minimum temperature = 344/336 = 1.025  
+Ratio well done/recommended minimum temperature = 350/336 = 1.041  
 
 ### Exercise 4
 
