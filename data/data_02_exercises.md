@@ -47,7 +47,8 @@ well done	170°F
 
 What is the ratio for "medium" and "well done" compared to the recommended minimum temperature?  
 
-Hint: calculate temperature in Kelvin.  
+Hint: first calculate temperature in Kelvin. Next calculate the ratio.   
+Formula:  
 
 $K = (F − 32) × \frac{5}{9} + 273.15$  
 
