@@ -57,7 +57,7 @@ It is important to note that ratio data allows for meaningful statement about th
 
 ### Calculations and visualization methods on different data types
 
-It is not possible to perform all types of calculations, comparisons and visualizations on all data types. As explained above, you can not perform ratio comparisons on interval data. Obviously, you can not (directly) create bar graphs or histograms on nominal or ordinal data. However, you can calculate frequencies and a proportion (by dividing the frequency by the total number of events) on nominal and ordinal data. Proper visualizations of nominal and ordinal data are Pie Charts and Bar Charts. Because nominal data is categorical data that can take on a limited number of values that don't have an inherent order or numerical meaning, some types of visualizations that are used to represent quantitative data, such as continuous data, are not suitable for representing nominal data. 
+It is not possible to perform all types of calculations, comparisons and visualizations on all data types. As explained above, you can not perform ratio comparisons on interval data. Obviously, you can not (directly) create bar graphs or histograms on nominal or ordinal data. However, you can calculate frequencies and a proportion (by dividing the frequency by the total number of events) on nominal and ordinal data. 
 
 Some examples of visualization types that are not suitable on certain data types are listed below:
 
@@ -65,29 +65,22 @@ Some examples of visualization types that are not suitable on certain data types
 
 Line graph: This type of visualization is used to display the changes in a continuous variable over time, and doesn't work well with nominal data.
 
-- Scatter plot: A scatter plot represents the relationship between two continuous variables by plotting individual data points. It doesn't work well with nominal data because it doesn't have any quantitative meaning.
+- Scatter plot: A scatter plot represents the relationship between two continuous variables by plotting individual data points. It doesn't work with nominal data because it doesn't have any quantitative meaning.
 
 - Boxplot: boxplots are used to show the distribution of a continuous variable. It doesn't make sense to use it with categorical variables.
 
-- Histogram: Histograms are used to represent the distribution of continuous variables, so it is not suitable for categorical data.
-
 **Ordinal data**
 
-While ordinal data is more structured than nominal data, some types of visualizations are not suitable for ordinal data. These include:
+While ordinal data is more structured than nominal data, some types of visualizations are not suitable for ordinal data. These include for example:
 
 - Scatter plot: Scatter plots are used to show the relationship between two continuous variables by plotting individual data points. Since ordinal data is not continuous, it doesn't make sense to use a scatter plot to represent it.
 
-- Heatmap: Heatmap is a way to visualize matrix data as color intensity on a grid. It works well with continuous and numerical data, but ordinal data doesn't have quantitative values and therefore doesn't work well with this type of visualization
-
-- Pie Chart: a Pie chart is useful to show the proportion of each category within the total dataset. However, it may not be the best way to show the ordinal relationship between categories, especially if the number of categories is large.
 
 **Discrete data**
 
 Some examples of visualization that are not suitable for discrete data are:
 
-- Line graph: Line graphs are commonly used to display the changes in a continuous variable over time. While a line graph can be used to represent discrete data by plotting individual points, it doesn't make sense to draw a line between the points since it could imply continuity. 
-
-- Histogram: Histograms are used to represent the distribution of continuous variables, so it is not suitable for discrete data. 
+- Line graph: Line graphs are commonly used to display the changes in a continuous variable over time. While a line graph can be used to represent discrete data by plotting individual points, it doesn't make sense to draw a line between the points since it could imply continuity.  
 
 These are some examples of visualizations that are not suitable for discrete data, but there are many other visualizations that can be used to represent discrete data. Examples of visualizations that are well suited for discrete data include bar charts, dot plots, pie charts, and stacked bar charts. These visualizations can help to effectively display the frequency or count of specific values in a dataset.
 
