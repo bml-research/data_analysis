@@ -149,7 +149,7 @@ So what is tidy data?
 Tidying data is a common method of relating a dataset's meaning to its structure. Depending on how rows, columns, and tables are matched with observations, variables, and types, a dataset might be unorganized or well-organized. 
 
 Rules for tidy data:
-- Each dataset should have a single column  
+- Each dataset should have a single table    
 - Each feature/variable should have its own column  
 - Each observation must have its own row  
 - Each value must be in its own cell  
