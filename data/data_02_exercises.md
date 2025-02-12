@@ -15,17 +15,13 @@
 Download the [this dataset](https://www.kaggle.com/datasets/vinitshah0110/food-composition).
 Open it with a text editor (or Excel).
 
-Decribe for the following columns what kind of data it holds. Also describe the scale.
+Describe for the following columns what kind of data it holds. Also describe the scale.
 
 |Column           |Data type       |Scale            |
 |:----------------|:---------------|:----------------|
 |Food Name        |                |                 |
 |Fat factor       |                |                 |
 |Analyzed Portion |                |                 |
-
-Food Name: nominal data, nominal scale
-Fat factor: continuous, ratio scale
-Analyzed Portion: continuous, ratio scale
 
 
 ### Exercise 2
@@ -49,7 +45,11 @@ recommended minimum temperature	145°F
 medium	160°F
 well done	170°F
 
-What is the ratio for "medium" and "well done" compared to the recommended minimum temperature?
+What is the ratio for "medium" and "well done" compared to the recommended minimum temperature?  
+
+Hint: calculate temperature in Kelvin.  
+
+$K = (F − 32) × \frac{5}{9} + 273.15$  
 
 ### Exercise 4
 

@@ -34,7 +34,9 @@
 
 Note that fahrenheit scale has no absolute zero (0 °F, was established as the freezing temperature of a solution of brine made from a mixture of water, ice, and ammonium chloride). As a result, we can not directly calculate a ratio as the fahrenheit scale is an interval scale. We first need to convert the data to Kelvin.
 
-We can use the formula K = (F − 32) × 5 ⁄ 9 + 273.15
+We can use the formula:  
+
+$K = (F − 32) × \frac{5}{9} + 273.15$  
 
 So will will get the following data:
 
