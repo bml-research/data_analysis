@@ -36,7 +36,7 @@ Tijdens de gehele keten van ontwikkeling, opwerking en productie van voedingsing
 - [Data sets](./data_sets/data_sets.md)
 
 
-## Link naar vorbeeld opdracht
+## Link naar voorbeeld opdracht
 
 - [Hier is een voorbeeld eindopdracht met uitwerkingen te vinden](./example_assignment/example_assignment.md)
 
@@ -44,6 +44,10 @@ Tijdens de gehele keten van ontwikkeling, opwerking en productie van voedingsing
 
 - [Prijs van diverse soorten spijsolie in de tijd](./other_analysis/edible_oil/oil_analysis.html)
 
+
+## Installeren van MS Excel, R en RStudio 
+
+- [Hier vind je informatie voor de installatie van Excel, R en RStudio](./install/data_01_install.md)
 
 ---
 

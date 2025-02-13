@@ -4,9 +4,8 @@
 [Go back to the main page](../index.md)
 
 
-# Installation
+# Installation of Excel, R and RStudio
 
-## Index page
 
 ---
 
@@ -44,7 +43,9 @@ Here you can deselect this option and set the decimal separator to a dot and the
 ![Pic](./pics/fig02.png)
 *<sub>Figure 2. Set decimal separator</sub>*
 
-At last, set PowerQuery to United States.
+Alternatively, on Windows, you can set the decimal separator at the OS level. To do so, click the Windows button and type `intl.cpl`. Then click `Additional settings`. Here you can specify your decimal separator at the OS level.
+
+At last, it is recommended to set PowerQuery to United States.
 
 `Data > Get Data > Query Options > Regional Settings > English (United States)`
 
@@ -93,29 +94,30 @@ Please note:
 
 After the installation, it is recommended to set the Office display language to English (so that all functions are set to English).   
 
-To do so, choose `bla`
+To do so, see the instructions below.  
+First check your language settings in Excel:  
+
 
 ![Pic](./pics/fig04.png)
-*<sub>Figure 1. Set language to English</sub>*
+*<sub>Figure 4. Formulas are Dutch</sub>*
 
-In addition, set the decimal separator to a dot.  
+Set Language & Region to English in the general settings of your Mac OS.  
 
-`File > More... > Options > Advanced > Use system separators`
-
-Here you can deselect this option and set the decimal separator to a dot and the thousands separator to a comma. 
+Here you can change your region settings. Set to United States.
 
 ![Pic](./pics/fig05.png)
-*<sub>Figure 2. Set decimal separator</sub>*
+*<sub>Figure 5. Change regional settings.</sub>*
 
-At last, set PowerQuery to United States.
+Under Applications you can also set Excel to English.
 
-`Data > Get Data > Query Options > Regional Settings > English (United States)`
 
 ![Pic](./pics/fig06.png)
-*<sub>Figure 3. Set Regional Settings for PowerQuery</sub>*
+*<sub>Figure 6. Switch Excel to English.</sub>*
+
+Check the language setting in Excel.
 
 ![Pic](./pics/fig07.png)
-*<sub>Figure 3. Set Regional Settings for PowerQuery</sub>*
+*<sub>Figure 7. Formulas are now set to English.</sub>*
 
 ### R and RStudio
 
@@ -123,14 +125,14 @@ First download and install R at:
 
 https://cran.rstudio.com/
 
-Download R for Windows. Choose install R for the first time.  
+Download R for Mac OS. Choose install R for the first time.  
 Download teh 64 bit package.  
 Follow the on screen instructions and choose the default settings.
 
 Next download and install RStudio at:  
 https://posit.co/download/rstudio-desktop/
 
-Choose DOWNLOAD RSTUDIO DESKTOP FOR WINDOWS.
+Download the DMG file and drag to your Applications.
 Follow the on screen instructions and choose the default settings.
 
 Install tidyverse in RStudio using:
@@ -140,11 +142,53 @@ install.packages("tidyverse")
 ```
 
 
+## Linux
+
+### MS Excel
+
+Other than a Windows VM there's currently no easy workaround to run Microsoft Office natively on Linux.  
+The web version obviously works but lags a lot of features.
+See: https://www.microsoft.com/nl-be/microsoft-365/free-office-online-for-the-web
+
+### R and RStudio
+
+You can install R on Ubuntu 24.04 using:
+
+```
+sudo apt-get install r-base
+```
+
+The easiest way to install RStudio on Ubuntu Linux is by installing the Snap package:
+
+```
+sudo snap install rstudio
+```
+
+The easiest way to install Tidyverse is using apt from the Ubuntu repository:
+
+```
+sudo apt install r-cran-tidyverse
+```
+
+For other distro's (Fedora, OpenSuse) installers can be downloaded at: https://posit.co/download/rstudio-desktop/  
+To the best of our knowledge, there is currently no FlatPak version available.
+
+## Chromebooks
+
+Chromebooks are very limited for data analysis and not supported.  
+
+### MS Excel
+
+The web version of Excel obviously works but lags a lot of essential features.
+See: https://www.microsoft.com/nl-be/microsoft-365/free-office-online-for-the-web
+
+### R and RStudio
+
+RStudio can be run from the web with limited capabilities.  
+See the posit cloud website: https://posit.cloud/
 
 
-
-
-
+---
 
 
 
