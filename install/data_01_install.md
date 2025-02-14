@@ -9,8 +9,6 @@
 
 ---
 
-
-
 ## Windows Users
 
 
@@ -28,7 +26,7 @@ Please note:
 - You need a valid Hanze email address to download Office.
 - After your graduation or departure from the Hanze, you will no longer be able to use Office.
 
-After the installation, it is recommended to set the Office display language to English (so that all functions are set to English).   
+After the installation, it is recommended to set the Office display language to English (so that all function names in Excel are set to English).   
 To do so, choose `File > More... > Options > Language > English`
 
 ![Pic](./pics/fig01.png)
@@ -45,12 +43,12 @@ Here you can deselect this option and set the decimal separator to a dot and the
 
 Alternatively, on Windows, you can set the decimal separator at the OS level. To do so, click the Windows button and type `intl.cpl`. Then click `Additional settings`. Here you can specify your decimal separator at the OS level.
 
-At last, it is recommended to set PowerQuery to United States.
+At last, it is recommended to set the regional settings of PowerQuery to United States.
 
 `Data > Get Data > Query Options > Regional Settings > English (United States)`
 
 ![Pic](./pics/fig03.png)
-*<sub>Figure 3. Set Regional Settings for PowerQuery</sub>*
+*<sub>Figure 3. Set Regional Settings for PowerQuery to English</sub>*
 
 ### R and RStudio
 
@@ -59,7 +57,7 @@ First download and install R at:
 https://cran.rstudio.com/
 
 Download R for Windows. Choose install R for the first time.  
-Download teh 64 bit package.  
+Download the 64 bit package.  
 Follow the on screen instructions and choose the default settings.
 
 Next download and install RStudio at:  
@@ -101,9 +99,9 @@ First check your language settings in Excel:
 ![Pic](./pics/fig04.png)
 *<sub>Figure 4. Formulas are Dutch</sub>*
 
-Set Language & Region to English in the general settings of your Mac OS.  
+Set Language & Region to English in the system settings of your Mac OS.  
 
-Here you can change your region settings. Set to United States.
+Here you can change your region settings. Set the region to United States.
 
 ![Pic](./pics/fig05.png)
 *<sub>Figure 5. Change regional settings.</sub>*
@@ -125,8 +123,10 @@ First download and install R at:
 
 https://cran.rstudio.com/
 
-Download R for Mac OS. Choose install R for the first time.  
-Download teh 64 bit package.  
+Download R for Mac OS.  
+Check your [system information](https://support.apple.com/en-ie/guide/mac-help/syspr35536/mac) if you have an older Intel based Mac or a newer Apple silicon (M1,2,..) based Mac.
+
+Download the 64 bit package (pkg file).  
 Follow the on screen instructions and choose the default settings.
 
 Next download and install RStudio at:  
@@ -147,7 +147,7 @@ install.packages("tidyverse")
 ### MS Excel
 
 Other than a Windows VM there's currently no easy workaround to run Microsoft Office natively on Linux.  
-The web version obviously works but lags a lot of features.
+The web version obviously works but lacks a lot of features.
 See: https://www.microsoft.com/nl-be/microsoft-365/free-office-online-for-the-web
 
 ### R and RStudio
@@ -179,7 +179,7 @@ Chromebooks are very limited for data analysis and not supported.
 
 ### MS Excel
 
-The web version of Excel obviously works but lags a lot of essential features.
+The web version of Excel obviously works but lacks a lot of essential features.
 See: https://www.microsoft.com/nl-be/microsoft-365/free-office-online-for-the-web
 
 ### R and RStudio
@@ -187,6 +187,7 @@ See: https://www.microsoft.com/nl-be/microsoft-365/free-office-online-for-the-we
 RStudio can be run from the web with limited capabilities.  
 See the posit cloud website: https://posit.cloud/
 
+You can [install Linux on a Chromebook](https://support.google.com/chromebook/answer/9145439?hl=en) but we have never tested it.
 
 ---
 
