@@ -184,10 +184,42 @@ See: https://www.microsoft.com/nl-be/microsoft-365/free-office-online-for-the-we
 
 ### R and RStudio
 
+You can [install Linux on a Chromebook](https://support.google.com/chromebook/answer/9145439?hl=en) but we have never tested it.
+
 RStudio can be run from the web with limited capabilities.  
 See the posit cloud website: https://posit.cloud/
 
-You can [install Linux on a Chromebook](https://support.google.com/chromebook/answer/9145439?hl=en) but we have never tested it.
+You can create a RStudio project by clicking `new project` and then choose new RStudio Project.
+Provide a suitable name.
+
+To upload files (such as csv files) you can use the upload button in the right lower panel.
+
+>Note that you can upload multiple files by uploading a zip file. The zip file will be automatically unpacked by the server.
+
+![Pic](./pics/fig08.png)
+*<sub>Figure 8. Upload multiple files using a zip file.</sub>*
+
+You can also upload R Markdown files.
+As shown below, an uploaded R Markdown file is also visible in the file explorer pane:
+
+![Pic](./pics/fig09.png)
+*<sub>Figure 9. Uploaded R Markdown file in the file explorer.</sub>*
+
+So now we can start the data Analysis using the R Markdown file.
+
+>Note that it additional packages such as Tidyverse might need to be installed.
+
+You can install Tidyverse using:
+
+```
+install.packages("tidyverse")
+```
+
+Next we can import data from the uploaded files:
+
+![Pic](./pics/fig10.png)
+*<sub>Figure 10. Data from csv file loaded in as a data frame or tibble.</sub>*
+
 
 ---
 
