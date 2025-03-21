@@ -36,13 +36,19 @@ However, I do recommend [Visual Studio Code](https://code.visualstudio.com/) as 
 
 Open your text file and check how the data are organized.
 
-Here you can see the [Food Composition](https://www.kaggle.com/datasets/vinitshah0110/food-composition?resource=download&select=Food+Composition.csv) file.
+Here you can see the [Food Composition](https://www.kaggle.com/datasets/vinitshah0110/food-composition?resource=download&select=Food+Composition.csv) file.  
+You can also download the file [here](./files_02_data_import/Food_Composition.csv)
 
 ![food composition](./pics_02_data_import/01.png)  
 *<sub>Figure 1: a csv file in Visual Studio Code</sub>*
 
 As can be seen from the screenshot above, the csv file contains a header and the column separator that is used is a comma. It can also be seen that the file is UTF-8 encoded and contains a BOM.
 
+As you scroll through the file, you might also see some errors.
+There are 3 newline errors in the file.
+Can you find which lines are wrong?
+
+Answer: line 1486, line 1496 and line 1507. They contain an erroneous newline.
 
 ## Check the decimal separator
 
