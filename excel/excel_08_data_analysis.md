@@ -164,7 +164,7 @@ Or the example that we have seen before:
 
 It is possible to nest functions. Although this is allowed in some cases, be aware that this becomes very complex easily.
 
-Example:
+Example notation:
 
 ```
 =IF(AVERAGE(A1:A3)>5.5;SUM(B1:B3);"Insufficient")
