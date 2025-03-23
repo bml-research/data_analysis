@@ -40,7 +40,7 @@ And then we can type the appropriate formula:
 Note that the IF function was used to prevent a division by zero error.
 
 ```
-=IF([@Calories]=0;0;[@[Calories from Fat]]/[@Calories]*100)
+=IF([@Calories]=0,0,[@[Calories from Fat]]/[@Calories]*100)
 ```
 
 If the denominator is zero, the result will be 0. In this way, a division by zero error will be prevented.
@@ -80,7 +80,7 @@ where A1:A10 is the range of cells to be added.
 Other functions require multiple arguments. For example, the COUNTIF function requires 2 arguments. An example notation for the COUNTIF function is written as:
 
 ```
-=COUNTIF(A1:A10;">10")
+=COUNTIF(A1:A10,">10")
 ```
 
 where A1:A10 (the first argument) is the range of cells to be evaluated and ">10" (the second argument) is the condition to be evaluated.
@@ -89,7 +89,7 @@ where A1:A10 (the first argument) is the range of cells to be evaluated and ">10
 So the basic anatomy of a function is:
 
 ```
-FUNCTIONNAME(ARGUMENT1;ARGUMENT2)
+FUNCTIONNAME(ARGUMENT1,ARGUMENT2)
 ```
 
 Note that Excel provides some help. Let's consider the `COUNTIFS` function.
@@ -107,6 +107,8 @@ The arguments are filled in and the function returns the result in cell A12:
 
 ![countifs](./pics_08_data_analysis/fig8.png)
 *<sub>Figure 8: The result of the function is returned and shown in cell A12.</sub>*
+
+> A small note: The argument separator can be a comma or a semi-colon depending on your region setting. For USA a comma is used. In Europe, the semicolon is used. During this course, you may see both in screenshots and examples.
 
 So to summarize:
 
