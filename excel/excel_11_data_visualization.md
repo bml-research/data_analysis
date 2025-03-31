@@ -59,7 +59,7 @@ Column charts are particularly useful for:
 
 Overall, Column charts are a versatile and effective way to visualize categorical data and to communicate important insights and trends to others.
 
-So let's take the pivot table from the fast food restaurant menu data as an example. See [this dataset](https://www.kaggle.com/datasets/mcdonalds/nutrition-facts)
+So let's take the pivot table from the fast food restaurant menu data as an example. See [this dataset](https://www.kaggle.com/datasets/mcdonalds/nutrition-facts).
 We have the average amount of total calories as well as the calories from fat of the different food categories.
 
 ![pivot](./pics_11_data_visualization/fig2.png)
