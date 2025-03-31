@@ -139,7 +139,7 @@ Radar charts are often used to compare multiple variables or data sets, particul
 
 Let's view some (imaginary) data from three fast food restaurants. These data show the average of calories of fat per serving from different Categories (like the previous data). But compared to the previous data, we now have these numbers from three different vendors.
 
-You can download the data [here](./files_11_data_visualization/file01_radar_data.csv)
+You can download the data [here](./files_11_data_visualization/file01_radar_data.csv).
 
 ![Data for a radar chart](./pics_11_data_visualization/fig10.png)
 *<sub>Figure 10: Data suitable for a radar chart. Calories from fat for different food Categories purchased from different vendors.</sub>*
