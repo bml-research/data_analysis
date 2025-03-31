@@ -323,7 +323,10 @@ The result of the pivot chart (drinks deselected):
 ![Pivot chart](./pics_11_data_visualization/fig30.png)
 *<sub>Figure 30: Pivot chart. Average calories and average calories from fat from different food categories. Drinks deselected. </sub>*
 
+Remember that we also need to include axis titles (now with all categories selected).
 
+![Pivot chart](./pics_11_data_visualization/fig31.png)
+*<sub>Figure 31: Pivot chart. Average calories and average calories from fat from different food categories. Axis labels and chart title included. </sub>*
 
 ---
 
