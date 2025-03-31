@@ -255,6 +255,8 @@ Bubble charts are a great way to display data that includes three variables. In 
 
 Suppose you have collected data on the nutritional content of different types of fruits. Specifically, you have measured the sugar content (in grams per serving) and the vitamin C content (in milligrams per serving) of six different types of fruit: apples, bananas, oranges, strawberries, blueberries, and grapes. In addition, you have collected the number of servings per year for a particular person.
 
+The fictive dataset can be downloaded [here](./files_11_data_visualization/file04_bubble_chart.csv).
+
 To display this data in a bubble chart, you could use the following format:
 
 X-axis: Sugar content (grams per serving)
