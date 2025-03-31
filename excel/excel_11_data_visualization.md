@@ -198,7 +198,9 @@ In summary, line charts are best used when you want to show trends or changes ov
 
 As an example, we take some fictive data about a weight loss program for 3 individuals (taking 3 different diets).
 
-The data is as follows:
+The data can be downloaded [here](./files_11_data_visualization/file02_weight_loss.csv).
+
+The data loaded in excel looks as follows:
 
 ![data](./pics_11_data_visualization/fig15.png)
 *<sub>Figure 15: Fictive data for a weight loss program for three different diets over the course of 1 year.</sub>*
