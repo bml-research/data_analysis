@@ -49,6 +49,11 @@ Tijdens de gehele keten van ontwikkeling, opwerking en productie van voedingsing
 
 - [Hier vind je informatie voor de installatie van Excel, R en RStudio](./install/data_01_install.md)
 
+## Plotten Excel op een Mac
+
+- [Hier vind je wat informatie over plotten van grafieken in Excel op een Macbook.](./troubleshooting/excel_mac.md)
+
+
 ---
 
 >Some text on this web page is copied, adapted and modified from Wikipedia.org  
