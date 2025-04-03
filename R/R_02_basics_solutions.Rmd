@@ -1,0 +1,428 @@
+![](../hanze/hanze.png)
+
+[Go back to the main page](../index.html)
+
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+```
+
+This file can be downloaded [here](./R_02_basics_solutions.Rmd)
+
+## R Basics
+
+1. Create a vector with elements 1, 2, 3. Assign to variable `vec1`.
+
+```{r}
+vec1 <- c(1, 2, 3)
+vec1
+```
+
+2. Calculate the length of the vector.
+
+```{r}
+length(vec1)
+```
+
+3. What class type is the vector?
+
+```{r}
+class(vec1)
+```
+
+4. Calculate the mean.
+
+```{r}
+mean(vec1)
+```
+
+5. Calculate the median.
+
+```{r}
+median(vec1)
+```
+
+6. Calculate the standard deviation.
+
+```{r}
+sd(vec1)
+```
+
+7. Create a vector with elements 1 to 10. Use the `:` notation. Assign to variable `vec2`.
+
+```{r}
+vec2 <- 1:10
+vec2
+```
+
+8. Create a sequence of 1 to 10. Only odd numbers. Assign to variable `vec3`.
+
+```{r}
+vec3 <- seq(1, 10, 2)
+vec3
+```
+
+9. create a vector from vector `a` repeated 10 times. Assign to `vec4`
+
+```{r}
+vec4 <- rep("a", 10)
+vec4
+```
+
+10. Use the `paste` function to concatenate strings `hello` and `world`.
+
+```{r}
+paste("Hello", "world")
+```
+
+11. Use the `paste0` function to concatenate strings `hello` and `world`.
+
+```{r}
+paste0("Hello", "world")
+```
+
+12. Print all letters of the alphabet.
+
+```{r}
+letters
+```
+
+13. Print all letters of the alphabet in capitals.
+
+```{r}
+LETTERS
+```
+
+14. assign all letters of the alphabet to `vec5`.
+
+```{r}
+vec5 <- letters
+vec5
+```
+
+15. Use `toupper` function to convert letters to capitals.
+
+```{r}
+toupper(vec5)
+```
+
+16. Select first element of `vec5`.
+
+```{r}
+vec5[1]
+```
+
+17. Select all but the first element of `vec5`.
+
+```{r}
+vec5[-1]
+```
+
+18. Print last 6 elements of `vec5`.
+
+```{r}
+tail(vec5)
+```
+
+19. Print last element of `vec5`.
+
+```{r}
+tail(vec5, 1)
+```
+
+20. Create a factor "G", "V", "O", "V", "G". Add levels and order. Assign to `fac1`.
+
+```{r}
+fac1 <- factor(c("G", "V", "O", "V", "G"), levels = c("O", "V", "G"), order = T)
+fac1               
+```
+
+21. Print all elements larger than "V" from fac1.
+
+```{r}
+fac1 > "V"
+```
+
+22. Create vector 1, 2, 3. Assign to `vec6`. Add 1 to each element.
+
+```{r}
+vec6 <- c(1, 2, 3)
+vec6 + 1
+```
+
+23. Create vector een, 2, 3. Assign to `vec7`. What class is this vector?
+
+```{r}
+vec7 <- c("een", 2, 3)
+class(vec7)
+
+```
+
+24. Create a data frame `df1` of two columns: 1, 2, 3 and 4, 5, 6. 
+
+```{r}
+df1 <- data.frame(c(1, 2, 3), c(4, 5, 6))
+df1
+```
+
+25. Add column names "col1" and "col2".
+
+```{r}
+names(df1) <- c("col1", "col2")
+df1
+```
+
+26. Add column `col3` that consist of vector 7, 8, 9.
+
+```{r}
+df1$col3 <- c(7, 8, 9)
+df1
+```
+
+27. Select the second column by index.
+
+```{r}
+df1[2]
+```
+
+28. Select the second column by name.
+
+```{r}
+df1$col2
+```
+
+29. Select the first column by index in [, ] notation.
+
+```{r}
+df1[, 1]
+```
+
+30. Select the third column by index in [, ] notation.
+
+```{r}
+df1[, 3]
+```
+
+31. Create `df2` with columns `col4`, `col5` and `col6`. Assign to vectors c(10, 11, 12), c(13, 14, 15), c(16, 17, 18).
+
+```{r}
+df2 <- data.frame("col4" = c(10, 11, 12), "col5" = c(13, 14, 15), "col6" = c(16, 17, 18))
+df2
+```
+
+32. Sum the data frames `df1` and `df2`.
+
+```{r}
+df3 <- df1 + df2
+df3
+```
+
+33. Add 1 to all values of `col3`.
+
+```{r}
+df3[3] + 1
+```
+
+34. Print `col3.
+
+```{r}
+df3
+```
+
+35. Add 1 to all values of `col3` and save to df3.
+
+```{r}
+df3[3] <- df3[3] + 1
+df3
+```
+
+36. Print the build in data frame `iris`.
+
+```{r}
+iris
+```
+
+37. Get help on data frame `iris`.
+
+```{r}
+?iris
+```
+
+
+38. Print the Petal Length bij index.
+
+```{r}
+iris[3]
+```
+
+39. Print the second row from the third column.
+
+```{r}
+iris[3][2,]
+```
+
+40. Print the Petal Length by column name.
+
+```{r}
+iris$Petal.Length
+```
+
+41. Print the second item from the column Petal Length.
+
+```{r}
+iris$Petal.Length[2]
+```
+
+42. Print the max Petal Length.
+
+```{r}
+max(iris$Petal.Length)
+```
+
+43. Print a logical vector for all the values in Petal Length equal to the max value.
+
+```{r}
+iris$Petal.Length == max(iris$Petal.Length)
+```
+
+44. Print the row in `iris` corresponding to the max Petal Length.
+
+```{r}
+iris[iris$Petal.Length == max(iris$Petal.Length),]
+```
+
+45. Print summary statistics of `iris`.
+
+```{r}
+summary(iris)
+```
+
+46. Print summary statistics of the Petal Length column in `iris`.
+
+```{r}
+summary(iris$Petal.Length)
+```
+
+47. Print all the rows equal to species `virginica` in `iris`. 
+
+```{r}
+iris[iris$Species == "virginica",]
+```
+
+48. Order the data frame based on Petal Length. Order ascending.
+
+```{r}
+iris[order(iris$Petal.Length), ]
+```
+
+49. Order the data frame based on Petal Length. Order descending.
+
+```{r}
+iris[order(-iris$Petal.Length), ]
+```
+
+50. Create XY-scatter of vectors: x = c(1, 2, 3), y = c(4, 5, 6)
+
+```{r}
+plot(c(1, 2, 3), c(4, 5, 6))
+```
+
+51. Create XY-scatter of `iris` Sepal Length against Petal With.
+
+```{r}
+plot(iris$Sepal.Length, iris$Petal.Width)
+```
+
+52. Again but with title and axis labels. Use whatever text you like.Blue dots. 
+
+```{r}
+plot(iris$Sepal.Length, iris$Petal.Width, main = "foo", xlab = "bar", ylab = "baz", col = "blue")
+```
+
+53. Create histogram of `iris` Sepal Lenght.
+
+```{r}
+hist(iris$Sepal.Length)
+```
+
+54. Again but with breaks of 0.25
+
+```{r}
+brk <- seq(from = 0, to = 8, by = 0.25)
+hist(iris$Sepal.Length, breaks = brk)
+```
+
+55. Create boxplot of `iris` Sepal Length and `iris` Sepal Width. Give labels (names) "sepal length" and "sepal width".
+
+```{r}
+boxplot(iris$Sepal.Length, iris$Sepal.Width, names = c("sepal length", "sepal width"))
+?boxplot
+```
+
+
+56. Create XY-scatter with y = c(1, 2, 3) and x  = c(4, 5, 6) using the formula notation.
+
+```{r}
+plot(c(1, 2, 3) ~ c(4, 5, 6))
+```
+
+57. Create a barplot of vector c(1, 2, 3).
+
+```{r}
+barplot(c(1, 2, 3))
+```
+
+58. Create a barplot of vector c(1, 2, 3). Labels (names) = a, b, c.
+
+```{r}
+barplot(c(1, 2, 3), names = c("a", "b", "c"))
+```
+
+59. Print the build in data frame `ChickWeight`.
+
+```{r}
+ChickWeight
+```
+
+60. Create XY-scatter of weight plotted against Time from data frame ChickWeight. Use formula notation.
+
+
+```{r}
+plot(ChickWeight$weight ~ ChickWeight$Time)
+```
+
+61. Create a linair regression model. Print model to screen.
+
+```{r}
+my_formula <- lm(ChickWeight$weight ~ ChickWeight$Time)
+my_formula
+```
+
+62. Create XY-scatter of weight plotted against Time from data frame ChickWeight. Use formula notation. Display the regression line.
+
+```{r}
+plot(ChickWeight$weight ~ ChickWeight$Time)
+abline(my_formula, col = "blue")
+```
+
+63. Plot the `iris` Sepal Length against Sepal Width in blue. Also add a second series to the plot.this should be Petal Length against Petal Width in red.
+
+
+```{r}
+plot(iris$Sepal.Length ~ iris$Sepal.Width, col="blue")
+points(iris$Petal.Length ~ iris$Sepal.Width, col="red")
+```
+
+64. Create a line plot of x = c(1, 2, 3) and y = c(4, 5, 6) in blue.Add second series x = c(1, 2, 3) and y = c(5, 5.5, 6) in red.
+
+
+```{r}
+plot(c(1, 2, 3), c(4, 5, 6), type="l", col="blue")
+lines(c(1, 2, 3), c(5, 5.5, 6), col="red")
+```
+
+The end...
+
+---
+
+>This web page is distributed under the terms of the Creative Commons Attribution License which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+>Creative Commons License: CC BY-SA 4.0.
