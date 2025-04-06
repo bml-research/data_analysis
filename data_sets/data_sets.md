@@ -53,7 +53,7 @@
 
 ### Practice file loading
 
-A dataset to practice importing csv and tsv files in Excel and R.
+A dataset to practice importing csv and tsv files in Excel and R.  
 [Click here](./download_data_sets/01_file_loading.zip) to download a zip file.
 
 The purpose of this excercise is simple: Load the data in a tibble using the read_delim function (or read_csv, read_csv2, read_tsv).
