@@ -49,6 +49,45 @@
 - [beer-profile-and-ratings-data-set](https://www.kaggle.com/datasets/ruthgn/beer-profile-and-ratings-data-set)
 
 
+## Self generated
+
+### Practice file loading
+
+A dataset to practice importing csv and tsv files in Excel and R.
+[Click here](./download_data_sets/01_file_loading.zip) to download a zip file.
+
+The purpose of this excercise is simple: Load the data in a tibble using the read_delim function (or read_csv, read_csv2, read_tsv).
+Check if this is done in an appropriate manner by printing your tibble.
+
+The files:
+The files in the folder contains some (fictive) gene-array data. The data set contains a selection of induced transcripts after some stimulus. The columns represent:
+- the mRNA entry
+- fold induction after some stimulus
+- the protein entry number
+- protein length in number of amino acids of the corresponding NP entry
+- the protein family the protein belongs to
+- the predicted cellular localization
+
+Whatever the contents of a file, you always need to address (some of) these questions:
+
+- Are there comment lines at the top?
+- Is there a header line with column names?
+- What is the column separator?
+- Are there quotes around character data?
+- How are missing values encoded?
+- How are numeric values encoded?
+- What is the type in each column?
+
+
+### Skewed data to test non-parametric statistics
+
+Right-skewed datasets used for non-parametric statistics training in Jamovi on april 7th 2025.
+Right click and choose `save link as...` in order te save the csv file.
+- [Bodyweight 2 diets](./download_data_sets/02_bodyweight_data.csv)
+- [Bodyweight 3 diets](./download_data_sets/03_bodyweight_data_3_diets.csv)
+
+
+
 
 ---
 
