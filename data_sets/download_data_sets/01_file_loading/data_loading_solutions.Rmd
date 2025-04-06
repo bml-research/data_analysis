@@ -1,0 +1,331 @@
+---
+title: "Loading data to dataframes"
+author: "Jurre Hageman"
+date: "2025-03-20"
+---
+# Load data in dataframe
+
+The purpose of this excercise is simple: Load the data in a tibble using the read_delim function (or read_csv, read_csv2, read_tsv).
+Check if this is done in an appropriate manner by printing your tibble.
+
+# The files:
+The files in the `files`directory contains some (fictive) gene-array data. The data set contains a selection of induced transcripts after some stimulus. The columns represent:
+- the mRNA entry
+- fold induction after some stimulus
+- the protein entry number
+- protein length in number of amino acids of the corresponding NP entry
+- the protein family the protein belongs to
+- the predicted cellular localization
+
+Whatever the contents of a file, you always need to address (some of) these questions:
+
+- Are there comment lines at the top?
+- Is there a header line with column names?
+- What is the column separator?
+- Are there quotes around character data?
+- How are missing values encoded?
+- How are numeric values encoded?
+- What is the type in each column?
+
+Also: read the help for the `read_delim` function carefully:
+
+```{r}
+library("tidyverse")
+?read.delim
+```
+
+Use the code block below to read the content of the files in the `files` directory in a dataframe object and assign it to the variable name `data`. There are 25 different files to practice your file loading skills.
+
+```{r}
+my_col_names <- c("transcript ID", "fold induction", "protein ID", "protein length", "family", "location")
+```
+
+## Some explanation:
+
+Base R uses `read.table` to load csv in a dataframe.
+
+Example:
+
+Using base R (data frame)
+
+```{r}
+folder <- "files"
+file_name <- "file01.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read.table(file_path, sep="\t", header=TRUE, na="no data")
+head(data)
+```
+
+However, Tidyverse uses a specialized version of `read.table` called `read_delim` that reads csv files in tibbles.
+Tibbles do have some advantages over data frames like:
+- Tibbles have nice printing method that show only the first 10 rows and all the columns that fit on the screen. This is useful when you work with large data sets.
+- When printed, the data type of each column is specified.
+
+There are some flavors of `read_delim`:
+- The `read_delim` function is the default function of Tidyverse to load tabulated data. This function has the highest amount of flexibility.
+- The `read_csv` function is a specialized version of `read_delim` for comma-separated value files (csv) files with the "USA" decimal separator (dot).
+- The `read_csv2` function is a specialized version of `read_delim` for semicolon-separated value files (csv) files with the "European" decimal separator (comma).
+- The `read_tsv` function is is a specialized version of `read_delim` for tab-separated value files (csv) files with the "USA" decimal separator (comma).
+
+There is no `read_tsv2` function. 
+
+Now try to load all the files correctly using either `read_delim`, `read_csv`, `read_csv2` or `read_tsv`.
+
+Remember that `read_delim` is the most flexible of all. Nothing wrong with only using `read_delim`. However, you may need some more arguments.
+
+## file01.txt
+
+```{r}
+folder <- "files"
+file_name <- "file01.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_tsv(file_path, comment="#", na = "no data", show_col_types = FALSE)
+head(data)
+```
+
+
+## file02.txt
+
+Using base R (data frame)
+
+
+```{r}
+folder <- "files"
+file_name <- "file02.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_csv(file_path, comment="#", na = "?", col_names=c("transcript ID", "fold induction", "protein ID", "protein length", "family", "location"), show_col_types = FALSE)
+head(data)
+```
+
+## file03.txt
+
+```{r}
+folder <- "files"
+file_name <- "file03.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_tsv(file_path, comment="@", na = "-1", show_col_types = FALSE)
+head(data)
+```
+
+## file04.txt
+
+```{r}
+folder <- "files"
+file_name <- "file04.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_tsv(file_path, comment="@", na = "-", show_col_types = FALSE,
+                 col_names=c("transcript ID", "fold induction", "protein ID", "protein length", "family", "location"))
+head(data)
+```
+
+## file05.txt
+
+```{r}
+folder <- "files"
+file_name <- "file05.csv"
+?read_delim
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, delim ="\t", col_names=TRUE, na="no data", locale=locale(decimal_mark = ","), comment = "@")
+head(data)
+
+```
+
+## file06.txt
+
+```{r}
+folder <- "files"
+file_name <- "file06.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, delim="\t", col_names=TRUE, na="ND", locale=locale(decimal_mark=","), comment = "$")
+head(data)
+```
+
+## file07.txt
+
+```{r}
+folder <- "files"
+file_name <- "file07.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_tsv(file_path, na="no data", comment = "$") 
+head(data)
+```
+
+## file08.txt
+
+```{r}
+folder <- "files"
+file_name <- "file08.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_csv2(file_path, na = "?", comment = "#") 
+head(data)
+```
+
+## file09.txt
+
+```{r}
+folder <- "files"
+file_name <- "file09.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_csv2(file_path, na = "ND", comment = "#") 
+head(data)
+```
+
+## file10.txt
+
+```{r}
+folder <- "files"
+file_name <- "file10.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_csv(file_path, na = "-1", comment = "#") 
+head(data)
+```
+
+## file11.txt
+
+```{r}
+folder <- "files"
+file_name <- "file11.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, na = "ND", comment = "$", locale=locale(decimal_mark=",")) 
+head(data)
+```
+
+## file12.txt
+
+```{r}
+folder <- "files"
+file_name <- "file12.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, delim = ";", na = "?", comment = "#", locale=locale(decimal_mark="."), col_names=c("transcript ID", "fold induction", "protein ID", "protein length", "family", "location")) 
+head(data)
+```
+
+## file13.txt
+
+```{r}
+folder <- "files"
+file_name <- "file13.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, delim = ";", comment = "@", na = "ND") 
+head(data)
+```
+
+## file14.txt
+
+```{r}
+folder <- "files"
+file_name <- "file14.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_tsv(file_path, comment = "$", na = "-1", col_names=c("transcript ID", "fold induction", "protein ID", "protein length", "family", "location")) 
+head(data)
+```
+
+## file15.txt
+
+```{r}
+folder <- "files"
+file_name <- "file15.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_tsv(file_path, comment = "@", na = "ND") 
+head(data)
+```
+
+## file16.txt
+
+```{r}
+folder <- "files"
+file_name <- "file16.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, comment = "#", na = "ND") 
+head(data)
+```
+
+## file17.txt
+
+```{r}
+folder <- "files"
+file_name <- "file17.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, comment = "@", na = "?") 
+head(data)
+```
+
+## file18.txt
+
+```{r}
+folder <- "files"
+file_name <- "file18.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, comment = "$", na = "no data", delim = ";", col_names=c("transcript ID", "fold induction", "protein ID", "protein length", "family", "location")) 
+head(data)
+```
+
+## file19.txt
+
+```{r}
+folder <- "files"
+file_name <- "file19.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_tsv(file_path, comment = "@", na = "no data") 
+head(data)
+```
+
+## file20.txt
+
+```{r}
+folder <- "files"
+file_name <- "file20.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, comment = "@", na = "no data", delim = ";") 
+head(data)
+```
+
+## file21.txt
+
+```{r}
+folder <- "files"
+file_name <- "file21.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_csv(file_path, comment = "#", na = "?") 
+head(data)
+```
+
+## file22.txt
+
+```{r}
+folder <- "files"
+file_name <- "file22.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_csv2(file_path, na = "no data") 
+head(data)
+```
+
+## file23.txt
+
+```{r}
+folder <- "files"
+file_name <- "file23.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_csv(file_path, na = "no data", comm = "#") 
+head(data)
+```
+
+## file24.txt
+
+```{r}
+folder <- "files"
+file_name <- "file24.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_delim(file_path, na = "?", delim = ";", col_names=c("transcript ID", "fold induction", "protein ID", "protein length", "family", "location")) 
+head(data)
+```
+
+## file25.txt
+
+```{r}
+folder <- "files"
+file_name <- "file25.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read_csv(file_path, na = "-1") 
+head(data)
+```

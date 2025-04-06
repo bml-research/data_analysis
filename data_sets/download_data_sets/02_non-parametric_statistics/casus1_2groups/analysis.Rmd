@@ -1,0 +1,68 @@
+---
+title: "Bodyweight Data Analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+library(stats)
+```
+
+
+Load Data
+Code snippet
+
+```{r}
+bodyweight_data <- read.csv("bodyweight_data.csv")
+bodyweight_data
+```
+
+Distribution Histograms
+Code snippet
+
+```{r}
+ggplot(bodyweight_data, aes(x = Bodyweight, fill = Diet)) +
+  geom_histogram(alpha = 0.5, position = "identity") +
+  facet_wrap(~ Diet) +
+  labs(title = "Distribution of Bodyweight by Diet",
+       x = "Bodyweight",
+       y = "Frequency") +
+  theme_minimal()
+```
+
+The histograms show the distribution of bodyweight for each diet. The right skewness is evident, as expected from the data generation.
+
+Boxplots
+Code snippet
+```{r}
+ggplot(bodyweight_data, aes(x = Diet, y = Bodyweight)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of Bodyweight by Diet",
+       x = "Diet",
+       y = "Bodyweight") +
+  theme_minimal()
+```
+The boxplots visually compare the bodyweight distributions between the two diets. The difference in medians is apparent, and the skewness is also observable.
+
+Shapiro-Wilk Normality Test
+Code snippet
+```{r}
+shapiro_diet1 <- shapiro.test(bodyweight_data$Bodyweight[bodyweight_data$Diet == "Diet 1"])
+shapiro_diet2 <- shapiro.test(bodyweight_data$Bodyweight[bodyweight_data$Diet == "Diet 2"])
+
+cat("Shapiro-Wilk test for Diet 1:\n")
+print(shapiro_diet1)
+cat("\nShapiro-Wilk test for Diet 2:\n")
+print(shapiro_diet2)
+```
+The Shapiro-Wilk test assesses the normality of the bodyweight data within each diet. The low p-values indicate that the data significantly deviates from a normal distribution, confirming the visual assessment of skewness.
+
+Mann-Whitney U Test
+Code snippet
+
+```{r}
+mann_whitney_result <- wilcox.test(Bodyweight ~ Diet, data = bodyweight_data)
+print(mann_whitney_result)
+```

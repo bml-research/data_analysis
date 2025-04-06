@@ -1,0 +1,222 @@
+---
+title: "Loading data to dataframes"
+author: "Jurre Hageman"
+date: "2025-03-20"
+---
+# Load data in dataframe
+
+The purpose of this excercise is simple: Load the data in a tibble using the read_delim function (or read_csv, read_csv2, read_tsv).
+Check if this is done in an appropriate manner by printing your tibble.
+
+# The files:
+The files in the `files`directory contains some (fictive) gene-array data. The data set contains a selection of induced transcripts after some stimulus. The columns represent:
+- the mRNA entry
+- fold induction after some stimulus
+- the protein entry number
+- protein length in number of amino acids of the corresponding NP entry
+- the protein family the protein belongs to
+- the predicted cellular localization
+
+Whatever the contents of a file, you always need to address (some of) these questions:
+
+- Are there comment lines at the top?
+- Is there a header line with column names?
+- What is the column separator?
+- Are there quotes around character data?
+- How are missing values encoded?
+- How are numeric values encoded?
+- What is the type in each column?
+
+Also: read the help for the `read_delim` function carefully:
+
+```{r}
+library("tidyverse")
+?read_delim
+```
+
+Use the code block below to read the content of the files in the `files` directory in a dataframe object and assign it to the variable name `data`. There are 25 different files to practice your file loading skills.
+
+
+## Some explanation:
+
+Base R uses `read.table` to load csv in a dataframe.
+
+Example:
+
+Using base R (data frame)
+
+```{r}
+folder <- "files"
+file_name <- "file01.csv"
+file_path <- paste0(folder, "/", file_name)
+data <- read.table(file_path, sep="\t", header=TRUE, na="no data")
+head(data)
+```
+
+However, Tidyverse uses a specialized version of `read.table` called `read_delim` that reads csv files in tibbles.
+Tibbles do have some advantages over data frames like:
+- Tibbles have nice printing method that show only the first 10 rows and all the columns that fit on the screen. This is useful when you work with large data sets.
+- When printed, the data type of each column is specified.
+
+There are some flavors of `read_delim`:
+- The `read_delim` function is the default function of Tidyverse to load tabulated data. This function has the highest amount of flexibility.
+- The `read_csv` function is a specialized version of `read_delim` for comma-separated value files (csv) files with the "USA" decimal separator (dot).
+- The `read_csv2` function is a specialized version of `read_delim` for semicolon-separated value files (csv) files with the "European" decimal separator (comma).
+- The `read_tsv` function is is a specialized version of `read_delim` for tab-separated value files (csv) files with the "USA" decimal separator (comma).
+
+There is no `read_tsv2` function. 
+
+Now try to load all the files correctly using either `read_delim`, `read_csv`, `read_csv2` or `read_tsv`.
+
+Remember that `read_delim` is the most flexible of all. Nothing wrong with only using `read_delim`. However, you may need some more arguments.
+
+
+## file01.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file02.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file03.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file04.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file05.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file06.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file07.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file08.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file09.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file10.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file11.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file12.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file13.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file14.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file15.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file16.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file17.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file18.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file19.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file20.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file21.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file22.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file23.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file24.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+## file25.txt
+
+```{r}
+#<YOUR CODE HERE>
+```
