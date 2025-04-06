@@ -89,7 +89,7 @@ where A1:A10 (the first argument) is the range of cells to be evaluated and ">10
 So the basic anatomy of a function is:
 
 ```
-FUNCTIONNAME(ARGUMENT1,ARGUMENT2)
+=FUNCTIONNAME(ARGUMENT1,ARGUMENT2)
 ```
 
 Note that Excel provides some help. Let's consider the `COUNTIFS` function.

@@ -72,6 +72,7 @@ Overall, the tidyverse packages provide a more user-friendly, consistent, and ef
 
 ## Excercises
 
+- [Basics](./R_02_basics_exercises.html)
 - [Data Import](./R_04_data_import_exercises.html)
 - [Data Cleaning](./R_07_data_cleaning_exercises.html)
 - [Data Analysis](./R_10_data_analysis_exercises.html)
@@ -79,6 +80,7 @@ Overall, the tidyverse packages provide a more user-friendly, consistent, and ef
 
 ## Solutions
 
+- [Basics](./R_02_basics_solutions.html)
 - [Data Import](./R_05_data_import_solutions.html)
 - [Data Cleaning](./R_08_data_cleaning_solutions.html)
 - [Data Analysis](./R_11_data_analysis_solutions.html)

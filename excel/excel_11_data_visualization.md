@@ -59,7 +59,7 @@ Column charts are particularly useful for:
 
 Overall, Column charts are a versatile and effective way to visualize categorical data and to communicate important insights and trends to others.
 
-So let's take the pivot table from the fast food restaurant menu data as an example.
+So let's take the pivot table from the fast food restaurant menu data as an example. See [this dataset](https://www.kaggle.com/datasets/mcdonalds/nutrition-facts).
 We have the average amount of total calories as well as the calories from fat of the different food categories.
 
 ![pivot](./pics_11_data_visualization/fig2.png)
@@ -139,6 +139,8 @@ Radar charts are often used to compare multiple variables or data sets, particul
 
 Let's view some (imaginary) data from three fast food restaurants. These data show the average of calories of fat per serving from different Categories (like the previous data). But compared to the previous data, we now have these numbers from three different vendors.
 
+You can download the data [here](./files_11_data_visualization/file01_radar_data.csv).
+
 ![Data for a radar chart](./pics_11_data_visualization/fig10.png)
 *<sub>Figure 10: Data suitable for a radar chart. Calories from fat for different food Categories purchased from different vendors.</sub>*
 
@@ -196,7 +198,9 @@ In summary, line charts are best used when you want to show trends or changes ov
 
 As an example, we take some fictive data about a weight loss program for 3 individuals (taking 3 different diets).
 
-The data is as follows:
+The data can be downloaded [here](./files_11_data_visualization/file02_weight_loss.csv).
+
+The data loaded in excel looks as follows:
 
 ![data](./pics_11_data_visualization/fig15.png)
 *<sub>Figure 15: Fictive data for a weight loss program for three different diets over the course of 1 year.</sub>*
@@ -250,6 +254,8 @@ If you have data that is most suitable to present in a XY-grid but you have an e
 Bubble charts are a great way to display data that includes three variables. In the context of food science, here is an example of a dataset that could be presented in a bubble chart:
 
 Suppose you have collected data on the nutritional content of different types of fruits. Specifically, you have measured the sugar content (in grams per serving) and the vitamin C content (in milligrams per serving) of six different types of fruit: apples, bananas, oranges, strawberries, blueberries, and grapes. In addition, you have collected the number of servings per year for a particular person.
+
+The fictive dataset can be downloaded [here](./files_11_data_visualization/file04_bubble_chart.csv).
 
 To display this data in a bubble chart, you could use the following format:
 
@@ -317,7 +323,10 @@ The result of the pivot chart (drinks deselected):
 ![Pivot chart](./pics_11_data_visualization/fig30.png)
 *<sub>Figure 30: Pivot chart. Average calories and average calories from fat from different food categories. Drinks deselected. </sub>*
 
+Remember that we also need to include axis titles (now with all categories selected) as well as a chart title.
 
+![Pivot chart](./pics_11_data_visualization/fig31.png)
+*<sub>Figure 31: Pivot chart. Average calories and average calories from fat from different food categories. Axis labels and chart title included. </sub>*
 
 ---
 

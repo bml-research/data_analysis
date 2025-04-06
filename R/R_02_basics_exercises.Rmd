@@ -1,0 +1,408 @@
+![](../hanze/hanze.png)
+
+[Go back to the main page](../index.html)
+
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+```
+
+This file can be downloaded [here](./R_02_basics_exercises.Rmd)
+
+
+## R Basics
+
+1. Create a vector with elements 1, 2, 3. Assign to variable `vec1`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+2. Calculate the length of the vector.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+3. What class type is the vector?
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+4. Calculate the mean.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+5. Calculate the median.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+6. Calculate the standard deviation.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+7. Create a vector with elements 1 to 10. Use the `:` notation. Assign to variable `vec2`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+8. Create a sequence of 1 to 10. Only odd numbers. Assign to variable `vec3`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+9. create a vector from vector `a` repeated 10 times. Assign to `vec4`
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+10. Use the `paste` function to concatenate strings `hello` and `world`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+11. Use the `paste0` function to concatenate strings `hello` and `world`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+12. Print all letters of the alphabet.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+13. Print all letters of the alphabet in capitals.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+14. assign all letters of the alphabet to `vec5`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+15. Use `toupper` function to convert letters to capitals.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+16. Select first element of `vec5`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+17. Select all but the first element of `vec5`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+18. Print last 6 elements of `vec5`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+19. Print last element of `vec5`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+20. Create a factor "G", "V", "O", "V", "G". Add levels and order. Assign to `fac1`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+21. Print all elements larger than "V" from fac1.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+22. Create vector 1, 2, 3. Assign to `vec6`. Add 1 to each element.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+23. Create vector een, 2, 3. Assign to `vec7`. What class is this vector?
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+24. Create a data frame `df1` of two columns: 1, 2, 3 and 4, 5, 6. 
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+25. Add column names "col1" and "col2".
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+26. Add column `col3` that consist of vector 7, 8, 9.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+27. Select the second column by index.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+28. Select the second column by name.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+29. Select the first column by index in [, ] notation.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+30. Select the third column by index in [, ] notation.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+31. Create `df2` with columns `col4`, `col5` and `col6`. Assign to vectors c(10, 11, 12), c(13, 14, 15), c(16, 17, 18).
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+32. Sum the data frames `df1` and `df2`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+33. Add 1 to all values of `col3`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+34. Print `col3.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+35. Add 1 to all values of `col3` and save to df3.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+36. Print the build in data frame `iris`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+37. Get help on data frame `iris`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+
+38. Print the Petal Length bij index.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+39. Print the second row from the third column.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+40. Print the Petal Length by column name.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+41. Print the second item from the column Petal Length.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+42. Print the max Petal Length.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+43. Print a logical vector for all the values in Petal Length equal to the max value.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+44. Print the row in `iris` corresponding to the max Petal Length.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+45. Print summary statistics of `iris`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+46. Print summary statistics of the Petal Length column in `iris`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+47. Print all the rows equal to species `virginica` in `iris`. 
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+48. Order the data frame based on Petal Length. Order ascending.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+49. Order the data frame based on Petal Length. Order descending.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+50. Create XY-scatter of vectors: x = c(1, 2, 3), y = c(4, 5, 6)
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+51. Create XY-scatter of `iris` Sepal Length against Petal With.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+52. Again but with title and axis labels. Use whatever text you like.Blue dots. 
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+53. Create histogram of `iris` Sepal Lenght.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+54. Again but with breaks of 0.25
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+55. Create boxplot of `iris` Sepal Length and `iris` Sepal Width. Give labels (names) "sepal length" and "sepal width".
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+
+56. Create XY-scatter with y = c(1, 2, 3) and x  = c(4, 5, 6) using the formula notation.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+57. Create a barplot of vector c(1, 2, 3).
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+58. Create a barplot of vector c(1, 2, 3). Labels (names) = a, b, c.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+59. Print the build in data frame `ChickWeight`.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+60. Create XY-scatter of weight plotted against Time from data frame ChickWeight. Use formula notation.
+
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+61. Create a linair regression model. Print model to screen.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+62. Create XY-scatter of weight plotted against Time from data frame ChickWeight. Use formula notation. Display the regression line.
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+63. Plot the `iris` Sepal Length against Sepal Width in blue. Also add a second series to the plot.this should be Petal Length against Petal Width in red.
+
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+64. Create a line plot of x = c(1, 2, 3) and y = c(4, 5, 6) in blue.Add second series x = c(1, 2, 3) and y = c(5, 5.5, 6) in red.
+
+
+```{r}
+#<YOUR CODE HERE>
+```
+
+The end...
+
+---
+
+>This web page is distributed under the terms of the Creative Commons Attribution License which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+>Creative Commons License: CC BY-SA 4.0.
