@@ -81,7 +81,7 @@ Whatever the contents of a file, you always need to address (some of) these ques
 
 ### Skewed data to test non-parametric statistics
 
-Right-skewed datasets used for non-parametric statistics training in Jamovi on april 7th 2025.
+Right-skewed datasets used for non-parametric statistics training in [Jamovi](https://www.jamovi.org/) on april 7th 2025.
 Right click and choose `save link as...` in order to save the csv file.
 - [Bodyweight 2 diets](./download_data_sets/02_bodyweight_data.csv)
 - [Bodyweight 3 diets](./download_data_sets/03_bodyweight_data_3_diets.csv)
