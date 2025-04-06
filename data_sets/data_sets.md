@@ -83,31 +83,31 @@ Whatever the contents of a file, you always need to address (some of) these ques
 
 Right-skewed datasets used for non-parametric statistics training in [Jamovi](https://www.jamovi.org/) on april 7th 2025.
 Right click and choose `save link as...` in order to save the csv file.
-- [Bodyweight 2 diets](./download_data_sets/02_bodyweight_data.csv)
-- [Bodyweight 3 diets](./download_data_sets/03_bodyweight_data_3_diets.csv)
+- [Bodyweight 2 diets](./download_data_sets/02_bodyweight_data.csv).  
+- [Bodyweight 3 diets](./download_data_sets/03_bodyweight_data_3_diets.csv).  
 
-All files (including the solutions) can be found [here](./download_data_sets/02_non-parametric_statistics.zip) 
+All files (including the solutions) can be found [here](./download_data_sets/02_non-parametric_statistics.zip).  
 
 ### Vitamin C dataset
 
 A fictive dataset to practice creating boxplots.  
-Download the zip [here](./download_data_sets/03_vitamin_c.zip)  
+Download the zip [here](./download_data_sets/03_vitamin_c.zip).  
 
 ### Vitamin B12 dataset
 
 Another fictive dataset to practice creating boxplots and histograms.  
-Download the zip [here](./download_data_sets/04_vitamin_b12.zip)  
+Download the zip [here](./download_data_sets/04_vitamin_b12.zip).  
 
 ### Pie dataset
 
 A fictive dataset to practice creating Pie charts.  
-Download the zip [here](./download_data_sets/05_pie_chart.zip)  
+Download the zip [here](./download_data_sets/05_pie_chart.zip).  
 
 
 ### Potassium dataset
 
 A fictive dataset to practice creating XY-scatter charts with multiple series.  
-Download the zip [here](./download_data_sets/06_potassium_matrices.zip)  
+Download the zip [here](./download_data_sets/06_potassium_matrices.zip).  
 
 
 ---
