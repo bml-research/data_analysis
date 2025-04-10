@@ -14,6 +14,8 @@
 
 ## Data sets
 
+There are various repositories to find data sets.  
+You can also search with [Google data set search](https://datasetsearch.research.google.com/)  
 
 ### Ingredients and additives:
 - [food-composition](https://www.kaggle.com/datasets/vinitshah0110/food-composition)
