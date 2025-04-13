@@ -293,6 +293,91 @@ formatted_table(my_tibble)
 The . is used as a placeholder for every item in the tibble.
 
 
+### Making tidy data
+
+As introduces in the [introduction to data section](https://bml-research.github.io/data_analysis/data/data_01_index.html), Tidyverse works best with tidy data. An explanation about Tidy data can be found [here](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html).  
+Now let's take the following example:
+
+```{r}
+category <- c("fruit", "vegetable", "vegetable", "fruit")
+type <- c("apple", "broccoli", "cauliflower", "banana")
+calories_from_fat <- c(2.5, 2.6, 5.7, 9.4)
+calories_from_sugar <- c(10.2, 5.5, 7.7, 10.2)
+my_tibble <- tibble(category, type, calories_from_fat, calories_from_sugar)
+formatted_table(my_tibble)
+```
+
+We can make the data frame tidy as follows:
+
+```{r}
+my_tibble_tidy <- my_tibble %>% 
+  pivot_longer(calories_from_fat:calories_from_sugar, names_to = "calorie_type", values_to = "calories")
+my_tibble_tidy
+```
+
+
+And we can convert the data frame to the longer format as follows:
+
+```{r}
+my_tibble_wider <- my_tibble_tidy %>% 
+  pivot_wider(names_from = "calorie_type", values_from = "calories")
+my_tibble_wider
+```
+
+>You may find the function `gather` and `spread` in some examples (on the internet or this website).
+>This function is depricated in favor of `pivot_longer` and `pivot_wider`. 
+>See [this link](https://tidyr.tidyverse.org/reference/gather.html)
+
+
+### Transpose data
+
+You can also transpose data. Imagine we have the following data:
+
+
+```{r}
+record_1 = c("fruit", "apple", "52.5") 
+record_2 = c("vegetable", "broccoli", "32.2")
+record_3 = c("vegetable", "cauliflower", "25.7")
+record_4 = c(c("fruit", "banana", "89.4") )
+
+my_tibble <- tibble(record_1, record_2, record_3, record_4)
+formatted_table(my_tibble)
+```
+
+In the example above records (observations) are in columns but they should be in rows. The features (variables) should be in columns.  
+You can easily detect this error as the columns do often not represent a single data type (in this case, numbers and text are mixed).  
+
+First we create a transposed matrix using the `t` function:
+
+```{r}
+trans_matrix <- t(my_tibble)
+trans_matrix
+  
+```
+
+Convert it to a tibble:
+
+```{r}
+my_tibble_transposed <- tibble(data.frame(trans_matrix))
+my_tibble_transposed
+```
+
+Add the columns:
+
+```{r}
+colnames(my_tibble_transposed) <- c("catogory", "type", "calories")
+my_tibble_transposed
+```
+
+And change the calories data type:
+
+```{r}
+my_tibble_transposed <- my_tibble_transposed %>% mutate(calories = as.numeric(calories))
+my_tibble_transposed
+```
+
+
+
 ---
 
 
