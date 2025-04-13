@@ -2227,8 +2227,8 @@ banana
 </table>
 <p>The . is used as a placeholder for every item in the tibble.</p>
 </div>
-<div id="making-tidy-data" class="section level3">
-<h3>Making tidy data</h3>
+<div id="making-data-tidy" class="section level3">
+<h3>Making data tidy</h3>
 <p>As introduces in the <a href="https://bml-research.github.io/data_analysis/data/data_01_index.html">introduction
 to data section</a>, Tidyverse works best with tidy data. An explanation
 about Tidy data can be found <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">here</a>.<br />
@@ -2318,30 +2318,220 @@ banana
 <p>We can make the data frame tidy as follows:</p>
 <pre class="r"><code>my_tibble_tidy &lt;- my_tibble %&gt;% 
   pivot_longer(calories_from_fat:calories_from_sugar, names_to = &quot;calorie_type&quot;, values_to = &quot;calories&quot;)
-my_tibble_tidy</code></pre>
-<pre><code>## # A tibble: 8 × 4
-##   category  type        calorie_type        calories
-##   &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;                  &lt;dbl&gt;
-## 1 fruit     apple       calories_from_fat        2.5
-## 2 fruit     apple       calories_from_sugar     10.2
-## 3 vegetable broccoli    calories_from_fat        2.6
-## 4 vegetable broccoli    calories_from_sugar      5.5
-## 5 vegetable cauliflower calories_from_fat        5.7
-## 6 vegetable cauliflower calories_from_sugar      7.7
-## 7 fruit     banana      calories_from_fat        9.4
-## 8 fruit     banana      calories_from_sugar     10.2</code></pre>
+formatted_table(my_tibble_tidy)</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+category
+</th>
+<th style="text-align:left;">
+type
+</th>
+<th style="text-align:left;">
+calorie_type
+</th>
+<th style="text-align:right;">
+calories
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+apple
+</td>
+<td style="text-align:left;">
+calories_from_fat
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+apple
+</td>
+<td style="text-align:left;">
+calories_from_sugar
+</td>
+<td style="text-align:right;">
+10.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+broccoli
+</td>
+<td style="text-align:left;">
+calories_from_fat
+</td>
+<td style="text-align:right;">
+2.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+broccoli
+</td>
+<td style="text-align:left;">
+calories_from_sugar
+</td>
+<td style="text-align:right;">
+5.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+cauliflower
+</td>
+<td style="text-align:left;">
+calories_from_fat
+</td>
+<td style="text-align:right;">
+5.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+cauliflower
+</td>
+<td style="text-align:left;">
+calories_from_sugar
+</td>
+<td style="text-align:right;">
+7.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+calories_from_fat
+</td>
+<td style="text-align:right;">
+9.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+calories_from_sugar
+</td>
+<td style="text-align:right;">
+10.2
+</td>
+</tr>
+</tbody>
+</table>
 <p>And we can convert the data frame to the longer format as
 follows:</p>
 <pre class="r"><code>my_tibble_wider &lt;- my_tibble_tidy %&gt;% 
   pivot_wider(names_from = &quot;calorie_type&quot;, values_from = &quot;calories&quot;)
-my_tibble_wider</code></pre>
-<pre><code>## # A tibble: 4 × 4
-##   category  type        calories_from_fat calories_from_sugar
-##   &lt;chr&gt;     &lt;chr&gt;                   &lt;dbl&gt;               &lt;dbl&gt;
-## 1 fruit     apple                     2.5                10.2
-## 2 vegetable broccoli                  2.6                 5.5
-## 3 vegetable cauliflower               5.7                 7.7
-## 4 fruit     banana                    9.4                10.2</code></pre>
+formatted_table(my_tibble_wider)</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+category
+</th>
+<th style="text-align:left;">
+type
+</th>
+<th style="text-align:right;">
+calories_from_fat
+</th>
+<th style="text-align:right;">
+calories_from_sugar
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+apple
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+10.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+broccoli
+</td>
+<td style="text-align:right;">
+2.6
+</td>
+<td style="text-align:right;">
+5.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+cauliflower
+</td>
+<td style="text-align:right;">
+5.7
+</td>
+<td style="text-align:right;">
+7.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:right;">
+9.4
+</td>
+<td style="text-align:right;">
+10.2
+</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>You may find the function <code>gather</code> and <code>spread</code>
 in some examples (on the internet or this website). This function is
@@ -2429,42 +2619,259 @@ single data type (in this case, numbers and text are mixed).</p>
 <p>First we create a transposed matrix using the <code>t</code>
 function:</p>
 <pre class="r"><code>trans_matrix &lt;- t(my_tibble)
-trans_matrix</code></pre>
-<pre><code>##          [,1]        [,2]          [,3]  
-## record_1 &quot;fruit&quot;     &quot;apple&quot;       &quot;52.5&quot;
-## record_2 &quot;vegetable&quot; &quot;broccoli&quot;    &quot;32.2&quot;
-## record_3 &quot;vegetable&quot; &quot;cauliflower&quot; &quot;25.7&quot;
-## record_4 &quot;fruit&quot;     &quot;banana&quot;      &quot;89.4&quot;</code></pre>
+formatted_table(trans_matrix)</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:left;">
+record_1
+</td>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+apple
+</td>
+<td style="text-align:left;">
+52.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+record_2
+</td>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+broccoli
+</td>
+<td style="text-align:left;">
+32.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+record_3
+</td>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+cauliflower
+</td>
+<td style="text-align:left;">
+25.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+record_4
+</td>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+89.4
+</td>
+</tr>
+</tbody>
+</table>
 <p>Convert it to a tibble:</p>
 <pre class="r"><code>my_tibble_transposed &lt;- tibble(data.frame(trans_matrix))
-my_tibble_transposed</code></pre>
-<pre><code>## # A tibble: 4 × 3
-##   X1        X2          X3   
-##   &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;
-## 1 fruit     apple       52.5 
-## 2 vegetable broccoli    32.2 
-## 3 vegetable cauliflower 25.7 
-## 4 fruit     banana      89.4</code></pre>
+formatted_table(my_tibble_transposed)</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+X1
+</th>
+<th style="text-align:left;">
+X2
+</th>
+<th style="text-align:left;">
+X3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+apple
+</td>
+<td style="text-align:left;">
+52.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+broccoli
+</td>
+<td style="text-align:left;">
+32.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+cauliflower
+</td>
+<td style="text-align:left;">
+25.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+89.4
+</td>
+</tr>
+</tbody>
+</table>
 <p>Add the columns:</p>
 <pre class="r"><code>colnames(my_tibble_transposed) &lt;- c(&quot;catogory&quot;, &quot;type&quot;, &quot;calories&quot;)
-my_tibble_transposed</code></pre>
-<pre><code>## # A tibble: 4 × 3
-##   catogory  type        calories
-##   &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;   
-## 1 fruit     apple       52.5    
-## 2 vegetable broccoli    32.2    
-## 3 vegetable cauliflower 25.7    
-## 4 fruit     banana      89.4</code></pre>
+formatted_table(my_tibble_transposed)</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+catogory
+</th>
+<th style="text-align:left;">
+type
+</th>
+<th style="text-align:left;">
+calories
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+apple
+</td>
+<td style="text-align:left;">
+52.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+broccoli
+</td>
+<td style="text-align:left;">
+32.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+cauliflower
+</td>
+<td style="text-align:left;">
+25.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+89.4
+</td>
+</tr>
+</tbody>
+</table>
 <p>And change the calories data type:</p>
 <pre class="r"><code>my_tibble_transposed &lt;- my_tibble_transposed %&gt;% mutate(calories = as.numeric(calories))
-my_tibble_transposed</code></pre>
-<pre><code>## # A tibble: 4 × 3
-##   catogory  type        calories
-##   &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
-## 1 fruit     apple           52.5
-## 2 vegetable broccoli        32.2
-## 3 vegetable cauliflower     25.7
-## 4 fruit     banana          89.4</code></pre>
+formatted_table(my_tibble_transposed)</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+catogory
+</th>
+<th style="text-align:left;">
+type
+</th>
+<th style="text-align:right;">
+calories
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+apple
+</td>
+<td style="text-align:right;">
+52.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+broccoli
+</td>
+<td style="text-align:right;">
+32.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+cauliflower
+</td>
+<td style="text-align:right;">
+25.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:right;">
+89.4
+</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <blockquote>
 <p>This web page is distributed under the terms of the Creative Commons

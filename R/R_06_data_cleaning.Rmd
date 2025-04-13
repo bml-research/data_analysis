@@ -293,7 +293,7 @@ formatted_table(my_tibble)
 The . is used as a placeholder for every item in the tibble.
 
 
-### Making tidy data
+### Making data tidy
 
 As introduces in the [introduction to data section](https://bml-research.github.io/data_analysis/data/data_01_index.html), Tidyverse works best with tidy data. An explanation about Tidy data can be found [here](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html).  
 Now let's take the following example:
@@ -312,7 +312,7 @@ We can make the data frame tidy as follows:
 ```{r}
 my_tibble_tidy <- my_tibble %>% 
   pivot_longer(calories_from_fat:calories_from_sugar, names_to = "calorie_type", values_to = "calories")
-my_tibble_tidy
+formatted_table(my_tibble_tidy)
 ```
 
 
@@ -321,7 +321,7 @@ And we can convert the data frame to the longer format as follows:
 ```{r}
 my_tibble_wider <- my_tibble_tidy %>% 
   pivot_wider(names_from = "calorie_type", values_from = "calories")
-my_tibble_wider
+formatted_table(my_tibble_wider)
 ```
 
 >You may find the function `gather` and `spread` in some examples (on the internet or this website).
@@ -351,7 +351,7 @@ First we create a transposed matrix using the `t` function:
 
 ```{r}
 trans_matrix <- t(my_tibble)
-trans_matrix
+formatted_table(trans_matrix)
   
 ```
 
@@ -359,21 +359,21 @@ Convert it to a tibble:
 
 ```{r}
 my_tibble_transposed <- tibble(data.frame(trans_matrix))
-my_tibble_transposed
+formatted_table(my_tibble_transposed)
 ```
 
 Add the columns:
 
 ```{r}
 colnames(my_tibble_transposed) <- c("catogory", "type", "calories")
-my_tibble_transposed
+formatted_table(my_tibble_transposed)
 ```
 
 And change the calories data type:
 
 ```{r}
 my_tibble_transposed <- my_tibble_transposed %>% mutate(calories = as.numeric(calories))
-my_tibble_transposed
+formatted_table(my_tibble_transposed)
 ```
 
 

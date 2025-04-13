@@ -11599,76 +11599,4207 @@ then, select all columns except <code>Item_mean</code> and
 <h2>Summarize and across</h2>
 <p>The summarise_each() function is deprecated in favour of the new
 across() function that works within summarise() and mutate().</p>
-<pre class="r"><code>df %&gt;%
+<pre class="r"><code>formatted_table(df %&gt;%
   group_by(Category) %&gt;%
-  summarize(across(everything(), list(mean = mean, sd = sd)))</code></pre>
-<pre><code>## # A tibble: 9 × 47
-##   Category Item_mean Item_sd `Serving Size_mean` `Serving Size_sd` Calories_mean
-##   &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;               &lt;dbl&gt;             &lt;dbl&gt;         &lt;dbl&gt;
-## 1 Beef &amp; …        NA      NA                  NA                NA          494 
-## 2 Beverag…        NA      NA                  NA                NA          114.
-## 3 Breakfa…        NA      NA                  NA                NA          527.
-## 4 Chicken…        NA      NA                  NA                NA          553.
-## 5 Coffee …        NA      NA                  NA                NA          284.
-## 6 Desserts        NA      NA                  NA                NA          222.
-## 7 Salads          NA      NA                  NA                NA          270 
-## 8 Smoothi…        NA      NA                  NA                NA          531.
-## 9 Snacks …        NA      NA                  NA                NA          246.
-## # ℹ 41 more variables: Calories_sd &lt;dbl&gt;, `Calories from Fat_mean` &lt;dbl&gt;,
-## #   `Calories from Fat_sd` &lt;dbl&gt;, `Total Fat_mean` &lt;dbl&gt;, `Total Fat_sd` &lt;dbl&gt;,
-## #   `Total Fat (% Daily Value)_mean` &lt;dbl&gt;,
-## #   `Total Fat (% Daily Value)_sd` &lt;dbl&gt;, `Saturated Fat_mean` &lt;dbl&gt;,
-## #   `Saturated Fat_sd` &lt;dbl&gt;, `Saturated Fat (% Daily Value)_mean` &lt;dbl&gt;,
-## #   `Saturated Fat (% Daily Value)_sd` &lt;dbl&gt;, `Trans Fat_mean` &lt;dbl&gt;,
-## #   `Trans Fat_sd` &lt;dbl&gt;, Cholesterol_mean &lt;dbl&gt;, Cholesterol_sd &lt;dbl&gt;, …</code></pre>
+  summarize(across(everything(), list(mean = mean, sd = sd))))</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Category
+</th>
+<th style="text-align:right;">
+Item_mean
+</th>
+<th style="text-align:right;">
+Item_sd
+</th>
+<th style="text-align:right;">
+Serving Size_mean
+</th>
+<th style="text-align:right;">
+Serving Size_sd
+</th>
+<th style="text-align:right;">
+Calories_mean
+</th>
+<th style="text-align:right;">
+Calories_sd
+</th>
+<th style="text-align:right;">
+Calories from Fat_mean
+</th>
+<th style="text-align:right;">
+Calories from Fat_sd
+</th>
+<th style="text-align:right;">
+Total Fat_mean
+</th>
+<th style="text-align:right;">
+Total Fat_sd
+</th>
+<th style="text-align:right;">
+Total Fat (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Total Fat (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Saturated Fat_mean
+</th>
+<th style="text-align:right;">
+Saturated Fat_sd
+</th>
+<th style="text-align:right;">
+Saturated Fat (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Saturated Fat (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Trans Fat_mean
+</th>
+<th style="text-align:right;">
+Trans Fat_sd
+</th>
+<th style="text-align:right;">
+Cholesterol_mean
+</th>
+<th style="text-align:right;">
+Cholesterol_sd
+</th>
+<th style="text-align:right;">
+Cholesterol (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Cholesterol (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Sodium_mean
+</th>
+<th style="text-align:right;">
+Sodium_sd
+</th>
+<th style="text-align:right;">
+Sodium (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Sodium (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Carbohydrates_mean
+</th>
+<th style="text-align:right;">
+Carbohydrates_sd
+</th>
+<th style="text-align:right;">
+Carbohydrates (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Carbohydrates (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Dietary Fiber_mean
+</th>
+<th style="text-align:right;">
+Dietary Fiber_sd
+</th>
+<th style="text-align:right;">
+Dietary Fiber (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Dietary Fiber (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Sugars_mean
+</th>
+<th style="text-align:right;">
+Sugars_sd
+</th>
+<th style="text-align:right;">
+Protein_mean
+</th>
+<th style="text-align:right;">
+Protein_sd
+</th>
+<th style="text-align:right;">
+Vitamin A (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Vitamin A (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Vitamin C (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Vitamin C (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Calcium (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Calcium (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Iron (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Iron (% Daily Value)_sd
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Beef &amp; Pork
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+494.0000
+</td>
+<td style="text-align:right;">
+141.36073
+</td>
+<td style="text-align:right;">
+224.6666667
+</td>
+<td style="text-align:right;">
+82.710050
+</td>
+<td style="text-align:right;">
+24.8666667
+</td>
+<td style="text-align:right;">
+9.2494530
+</td>
+<td style="text-align:right;">
+38.6000000
+</td>
+<td style="text-align:right;">
+14.2267354
+</td>
+<td style="text-align:right;">
+10.4666667
+</td>
+<td style="text-align:right;">
+3.8334369
+</td>
+<td style="text-align:right;">
+52.0000000
+</td>
+<td style="text-align:right;">
+19.127392
+</td>
+<td style="text-align:right;">
+1.1000000
+</td>
+<td style="text-align:right;">
+0.6324555
+</td>
+<td style="text-align:right;">
+87.3333333
+</td>
+<td style="text-align:right;">
+29.752951
+</td>
+<td style="text-align:right;">
+28.9333333
+</td>
+<td style="text-align:right;">
+9.7940701
+</td>
+<td style="text-align:right;">
+1020.66667
+</td>
+<td style="text-align:right;">
+267.67429
+</td>
+<td style="text-align:right;">
+42.466667
+</td>
+<td style="text-align:right;">
+11.096117
+</td>
+<td style="text-align:right;">
+40.13333
+</td>
+<td style="text-align:right;">
+6.412785
+</td>
+<td style="text-align:right;">
+13.466667
+</td>
+<td style="text-align:right;">
+2.133631
+</td>
+<td style="text-align:right;">
+2.5333333
+</td>
+<td style="text-align:right;">
+0.7432234
+</td>
+<td style="text-align:right;">
+9.8666667
+</td>
+<td style="text-align:right;">
+2.8751812
+</td>
+<td style="text-align:right;">
+8.800000
+</td>
+<td style="text-align:right;">
+2.366432
+</td>
+<td style="text-align:right;">
+27.333333
+</td>
+<td style="text-align:right;">
+9.574271
+</td>
+<td style="text-align:right;">
+6.9333333
+</td>
+<td style="text-align:right;">
+2.604026
+</td>
+<td style="text-align:right;">
+7.333333
+</td>
+<td style="text-align:right;">
+7.403345
+</td>
+<td style="text-align:right;">
+23.000000
+</td>
+<td style="text-align:right;">
+5.916080
+</td>
+<td style="text-align:right;">
+23.3333333
+</td>
+<td style="text-align:right;">
+5.875697
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Beverages
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+113.7037
+</td>
+<td style="text-align:right;">
+99.19476
+</td>
+<td style="text-align:right;">
+0.7407407
+</td>
+<td style="text-align:right;">
+3.849002
+</td>
+<td style="text-align:right;">
+0.0925926
+</td>
+<td style="text-align:right;">
+0.4811252
+</td>
+<td style="text-align:right;">
+0.1481481
+</td>
+<td style="text-align:right;">
+0.7698004
+</td>
+<td style="text-align:right;">
+0.0555556
+</td>
+<td style="text-align:right;">
+0.2886751
+</td>
+<td style="text-align:right;">
+0.2962963
+</td>
+<td style="text-align:right;">
+1.539601
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.5555556
+</td>
+<td style="text-align:right;">
+2.118296
+</td>
+<td style="text-align:right;">
+0.1851852
+</td>
+<td style="text-align:right;">
+0.6814598
+</td>
+<td style="text-align:right;">
+41.48148
+</td>
+<td style="text-align:right;">
+43.43020
+</td>
+<td style="text-align:right;">
+1.740741
+</td>
+<td style="text-align:right;">
+1.893158
+</td>
+<td style="text-align:right;">
+28.81481
+</td>
+<td style="text-align:right;">
+26.091609
+</td>
+<td style="text-align:right;">
+9.592593
+</td>
+<td style="text-align:right;">
+8.710115
+</td>
+<td style="text-align:right;">
+0.0370370
+</td>
+<td style="text-align:right;">
+0.1924501
+</td>
+<td style="text-align:right;">
+0.0740741
+</td>
+<td style="text-align:right;">
+0.3849002
+</td>
+<td style="text-align:right;">
+27.851852
+</td>
+<td style="text-align:right;">
+25.440283
+</td>
+<td style="text-align:right;">
+1.333333
+</td>
+<td style="text-align:right;">
+2.449490
+</td>
+<td style="text-align:right;">
+0.7407407
+</td>
+<td style="text-align:right;">
+2.668803
+</td>
+<td style="text-align:right;">
+23.481482
+</td>
+<td style="text-align:right;">
+60.519781
+</td>
+<td style="text-align:right;">
+2.962963
+</td>
+<td style="text-align:right;">
+8.083609
+</td>
+<td style="text-align:right;">
+0.2962963
+</td>
+<td style="text-align:right;">
+1.539601
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Breakfast
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+526.6667
+</td>
+<td style="text-align:right;">
+221.67507
+</td>
+<td style="text-align:right;">
+248.9285714
+</td>
+<td style="text-align:right;">
+119.784032
+</td>
+<td style="text-align:right;">
+27.6904762
+</td>
+<td style="text-align:right;">
+13.3407282
+</td>
+<td style="text-align:right;">
+42.6666667
+</td>
+<td style="text-align:right;">
+20.5351177
+</td>
+<td style="text-align:right;">
+10.6547619
+</td>
+<td style="text-align:right;">
+4.7620042
+</td>
+<td style="text-align:right;">
+53.4285714
+</td>
+<td style="text-align:right;">
+23.898304
+</td>
+<td style="text-align:right;">
+0.1071429
+</td>
+<td style="text-align:right;">
+0.3226361
+</td>
+<td style="text-align:right;">
+152.8571429
+</td>
+<td style="text-align:right;">
+171.482570
+</td>
+<td style="text-align:right;">
+50.9523810
+</td>
+<td style="text-align:right;">
+57.2469841
+</td>
+<td style="text-align:right;">
+1211.07143
+</td>
+<td style="text-align:right;">
+509.52337
+</td>
+<td style="text-align:right;">
+50.500000
+</td>
+<td style="text-align:right;">
+21.238770
+</td>
+<td style="text-align:right;">
+49.76190
+</td>
+<td style="text-align:right;">
+23.443559
+</td>
+<td style="text-align:right;">
+16.571429
+</td>
+<td style="text-align:right;">
+7.837194
+</td>
+<td style="text-align:right;">
+3.2619048
+</td>
+<td style="text-align:right;">
+1.3978995
+</td>
+<td style="text-align:right;">
+12.8333333
+</td>
+<td style="text-align:right;">
+5.9383691
+</td>
+<td style="text-align:right;">
+8.261905
+</td>
+<td style="text-align:right;">
+7.994082
+</td>
+<td style="text-align:right;">
+19.857143
+</td>
+<td style="text-align:right;">
+8.783497
+</td>
+<td style="text-align:right;">
+6.9285714
+</td>
+<td style="text-align:right;">
+6.013776
+</td>
+<td style="text-align:right;">
+8.904762
+</td>
+<td style="text-align:right;">
+27.695037
+</td>
+<td style="text-align:right;">
+16.166667
+</td>
+<td style="text-align:right;">
+7.827147
+</td>
+<td style="text-align:right;">
+17.1428571
+</td>
+<td style="text-align:right;">
+7.925173
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chicken &amp; Fish
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+552.9630
+</td>
+<td style="text-align:right;">
+306.54169
+</td>
+<td style="text-align:right;">
+242.2222222
+</td>
+<td style="text-align:right;">
+187.479914
+</td>
+<td style="text-align:right;">
+26.9629630
+</td>
+<td style="text-align:right;">
+20.8612292
+</td>
+<td style="text-align:right;">
+41.3333333
+</td>
+<td style="text-align:right;">
+32.2788333
+</td>
+<td style="text-align:right;">
+6.1666667
+</td>
+<td style="text-align:right;">
+3.6899031
+</td>
+<td style="text-align:right;">
+31.1111111
+</td>
+<td style="text-align:right;">
+18.721303
+</td>
+<td style="text-align:right;">
+0.1296296
+</td>
+<td style="text-align:right;">
+0.2628466
+</td>
+<td style="text-align:right;">
+75.3703704
+</td>
+<td style="text-align:right;">
+45.908059
+</td>
+<td style="text-align:right;">
+25.2222222
+</td>
+<td style="text-align:right;">
+15.4056267
+</td>
+<td style="text-align:right;">
+1257.77778
+</td>
+<td style="text-align:right;">
+584.34930
+</td>
+<td style="text-align:right;">
+52.333333
+</td>
+<td style="text-align:right;">
+24.447747
+</td>
+<td style="text-align:right;">
+49.07407
+</td>
+<td style="text-align:right;">
+18.853537
+</td>
+<td style="text-align:right;">
+16.333333
+</td>
+<td style="text-align:right;">
+6.275716
+</td>
+<td style="text-align:right;">
+2.9259259
+</td>
+<td style="text-align:right;">
+1.1410496
+</td>
+<td style="text-align:right;">
+11.8148148
+</td>
+<td style="text-align:right;">
+4.9461488
+</td>
+<td style="text-align:right;">
+7.333333
+</td>
+<td style="text-align:right;">
+4.531938
+</td>
+<td style="text-align:right;">
+29.111111
+</td>
+<td style="text-align:right;">
+14.765691
+</td>
+<td style="text-align:right;">
+20.4444444
+</td>
+<td style="text-align:right;">
+27.159548
+</td>
+<td style="text-align:right;">
+12.629630
+</td>
+<td style="text-align:right;">
+8.362683
+</td>
+<td style="text-align:right;">
+15.444444
+</td>
+<td style="text-align:right;">
+8.550004
+</td>
+<td style="text-align:right;">
+16.3703704
+</td>
+<td style="text-align:right;">
+5.616926
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Coffee &amp; Tea
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+283.8947
+</td>
+<td style="text-align:right;">
+157.81281
+</td>
+<td style="text-align:right;">
+71.1052632
+</td>
+<td style="text-align:right;">
+67.189708
+</td>
+<td style="text-align:right;">
+8.0210526
+</td>
+<td style="text-align:right;">
+7.4444452
+</td>
+<td style="text-align:right;">
+12.3578947
+</td>
+<td style="text-align:right;">
+11.4908991
+</td>
+<td style="text-align:right;">
+4.9210526
+</td>
+<td style="text-align:right;">
+4.6758295
+</td>
+<td style="text-align:right;">
+24.3684211
+</td>
+<td style="text-align:right;">
+23.292338
+</td>
+<td style="text-align:right;">
+0.1421053
+</td>
+<td style="text-align:right;">
+0.3472013
+</td>
+<td style="text-align:right;">
+27.2631579
+</td>
+<td style="text-align:right;">
+22.547449
+</td>
+<td style="text-align:right;">
+9.3789474
+</td>
+<td style="text-align:right;">
+7.5303343
+</td>
+<td style="text-align:right;">
+136.89474
+</td>
+<td style="text-align:right;">
+74.07651
+</td>
+<td style="text-align:right;">
+5.726316
+</td>
+<td style="text-align:right;">
+3.109498
+</td>
+<td style="text-align:right;">
+44.52632
+</td>
+<td style="text-align:right;">
+23.553399
+</td>
+<td style="text-align:right;">
+14.863158
+</td>
+<td style="text-align:right;">
+7.850478
+</td>
+<td style="text-align:right;">
+0.7789474
+</td>
+<td style="text-align:right;">
+0.6219213
+</td>
+<td style="text-align:right;">
+3.1789474
+</td>
+<td style="text-align:right;">
+2.6496846
+</td>
+<td style="text-align:right;">
+39.610526
+</td>
+<td style="text-align:right;">
+22.353207
+</td>
+<td style="text-align:right;">
+8.863158
+</td>
+<td style="text-align:right;">
+5.519040
+</td>
+<td style="text-align:right;">
+10.7368421
+</td>
+<td style="text-align:right;">
+6.109307
+</td>
+<td style="text-align:right;">
+0.000000
+</td>
+<td style="text-align:right;">
+0.000000
+</td>
+<td style="text-align:right;">
+28.294737
+</td>
+<td style="text-align:right;">
+17.623651
+</td>
+<td style="text-align:right;">
+2.1473684
+</td>
+<td style="text-align:right;">
+2.547291
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Desserts
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+222.1429
+</td>
+<td style="text-align:right;">
+108.08396
+</td>
+<td style="text-align:right;">
+64.2857143
+</td>
+<td style="text-align:right;">
+30.472470
+</td>
+<td style="text-align:right;">
+7.3571429
+</td>
+<td style="text-align:right;">
+3.4965970
+</td>
+<td style="text-align:right;">
+11.1428571
+</td>
+<td style="text-align:right;">
+5.1777914
+</td>
+<td style="text-align:right;">
+4.2857143
+</td>
+<td style="text-align:right;">
+2.2334044
+</td>
+<td style="text-align:right;">
+21.2857143
+</td>
+<td style="text-align:right;">
+11.041049
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+15.0000000
+</td>
+<td style="text-align:right;">
+11.547005
+</td>
+<td style="text-align:right;">
+4.8571429
+</td>
+<td style="text-align:right;">
+3.7606990
+</td>
+<td style="text-align:right;">
+117.14286
+</td>
+<td style="text-align:right;">
+55.06490
+</td>
+<td style="text-align:right;">
+5.000000
+</td>
+<td style="text-align:right;">
+2.160247
+</td>
+<td style="text-align:right;">
+34.85714
+</td>
+<td style="text-align:right;">
+19.591057
+</td>
+<td style="text-align:right;">
+11.571429
+</td>
+<td style="text-align:right;">
+6.654751
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+1.4142136
+</td>
+<td style="text-align:right;">
+3.4285714
+</td>
+<td style="text-align:right;">
+5.3184316
+</td>
+<td style="text-align:right;">
+26.142857
+</td>
+<td style="text-align:right;">
+18.224787
+</td>
+<td style="text-align:right;">
+4.000000
+</td>
+<td style="text-align:right;">
+2.886751
+</td>
+<td style="text-align:right;">
+5.1428571
+</td>
+<td style="text-align:right;">
+3.436499
+</td>
+<td style="text-align:right;">
+4.142857
+</td>
+<td style="text-align:right;">
+9.317163
+</td>
+<td style="text-align:right;">
+11.428571
+</td>
+<td style="text-align:right;">
+11.282097
+</td>
+<td style="text-align:right;">
+4.0000000
+</td>
+<td style="text-align:right;">
+3.829708
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Salads
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+270.0000
+</td>
+<td style="text-align:right;">
+127.43626
+</td>
+<td style="text-align:right;">
+108.3333333
+</td>
+<td style="text-align:right;">
+64.935866
+</td>
+<td style="text-align:right;">
+11.7500000
+</td>
+<td style="text-align:right;">
+7.6664855
+</td>
+<td style="text-align:right;">
+18.3333333
+</td>
+<td style="text-align:right;">
+11.5700763
+</td>
+<td style="text-align:right;">
+3.7500000
+</td>
+<td style="text-align:right;">
+1.4404860
+</td>
+<td style="text-align:right;">
+18.5000000
+</td>
+<td style="text-align:right;">
+7.007139
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+51.6666667
+</td>
+<td style="text-align:right;">
+29.097537
+</td>
+<td style="text-align:right;">
+17.3333333
+</td>
+<td style="text-align:right;">
+9.7502137
+</td>
+<td style="text-align:right;">
+588.33333
+</td>
+<td style="text-align:right;">
+295.39239
+</td>
+<td style="text-align:right;">
+24.500000
+</td>
+<td style="text-align:right;">
+12.243366
+</td>
+<td style="text-align:right;">
+21.66667
+</td>
+<td style="text-align:right;">
+12.484657
+</td>
+<td style="text-align:right;">
+7.166667
+</td>
+<td style="text-align:right;">
+4.119061
+</td>
+<td style="text-align:right;">
+4.5000000
+</td>
+<td style="text-align:right;">
+2.4289916
+</td>
+<td style="text-align:right;">
+18.5000000
+</td>
+<td style="text-align:right;">
+8.8034084
+</td>
+<td style="text-align:right;">
+6.833333
+</td>
+<td style="text-align:right;">
+3.371449
+</td>
+<td style="text-align:right;">
+19.833333
+</td>
+<td style="text-align:right;">
+9.806461
+</td>
+<td style="text-align:right;">
+146.6666667
+</td>
+<td style="text-align:right;">
+32.659863
+</td>
+<td style="text-align:right;">
+28.333333
+</td>
+<td style="text-align:right;">
+2.581989
+</td>
+<td style="text-align:right;">
+15.000000
+</td>
+<td style="text-align:right;">
+0.000000
+</td>
+<td style="text-align:right;">
+10.3333333
+</td>
+<td style="text-align:right;">
+3.829708
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smoothies &amp; Shakes
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+531.4286
+</td>
+<td style="text-align:right;">
+230.87137
+</td>
+<td style="text-align:right;">
+127.6785714
+</td>
+<td style="text-align:right;">
+93.209065
+</td>
+<td style="text-align:right;">
+14.1250000
+</td>
+<td style="text-align:right;">
+10.3714574
+</td>
+<td style="text-align:right;">
+21.7142857
+</td>
+<td style="text-align:right;">
+15.8484890
+</td>
+<td style="text-align:right;">
+8.3750000
+</td>
+<td style="text-align:right;">
+6.3357086
+</td>
+<td style="text-align:right;">
+41.7857143
+</td>
+<td style="text-align:right;">
+31.687545
+</td>
+<td style="text-align:right;">
+0.5357143
+</td>
+<td style="text-align:right;">
+0.4893036
+</td>
+<td style="text-align:right;">
+45.0000000
+</td>
+<td style="text-align:right;">
+32.289202
+</td>
+<td style="text-align:right;">
+14.7142857
+</td>
+<td style="text-align:right;">
+10.7938842
+</td>
+<td style="text-align:right;">
+183.57143
+</td>
+<td style="text-align:right;">
+110.88747
+</td>
+<td style="text-align:right;">
+7.785714
+</td>
+<td style="text-align:right;">
+4.693235
+</td>
+<td style="text-align:right;">
+90.42857
+</td>
+<td style="text-align:right;">
+30.887404
+</td>
+<td style="text-align:right;">
+30.142857
+</td>
+<td style="text-align:right;">
+10.229638
+</td>
+<td style="text-align:right;">
+1.4642857
+</td>
+<td style="text-align:right;">
+1.4005857
+</td>
+<td style="text-align:right;">
+5.7500000
+</td>
+<td style="text-align:right;">
+5.3860244
+</td>
+<td style="text-align:right;">
+77.892857
+</td>
+<td style="text-align:right;">
+25.772997
+</td>
+<td style="text-align:right;">
+10.857143
+</td>
+<td style="text-align:right;">
+6.132574
+</td>
+<td style="text-align:right;">
+18.7500000
+</td>
+<td style="text-align:right;">
+13.096861
+</td>
+<td style="text-align:right;">
+6.964286
+</td>
+<td style="text-align:right;">
+13.267845
+</td>
+<td style="text-align:right;">
+35.571429
+</td>
+<td style="text-align:right;">
+21.753550
+</td>
+<td style="text-align:right;">
+3.9642857
+</td>
+<td style="text-align:right;">
+4.041288
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Snacks &amp; Sides
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+245.7692
+</td>
+<td style="text-align:right;">
+141.77221
+</td>
+<td style="text-align:right;">
+94.6153846
+</td>
+<td style="text-align:right;">
+67.652961
+</td>
+<td style="text-align:right;">
+10.5384615
+</td>
+<td style="text-align:right;">
+7.5566239
+</td>
+<td style="text-align:right;">
+16.2307692
+</td>
+<td style="text-align:right;">
+11.4684629
+</td>
+<td style="text-align:right;">
+2.6923077
+</td>
+<td style="text-align:right;">
+1.7974341
+</td>
+<td style="text-align:right;">
+13.3846154
+</td>
+<td style="text-align:right;">
+9.197268
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+18.4615385
+</td>
+<td style="text-align:right;">
+20.349510
+</td>
+<td style="text-align:right;">
+6.2307692
+</td>
+<td style="text-align:right;">
+6.8209707
+</td>
+<td style="text-align:right;">
+395.76923
+</td>
+<td style="text-align:right;">
+333.96511
+</td>
+<td style="text-align:right;">
+16.461538
+</td>
+<td style="text-align:right;">
+13.973877
+</td>
+<td style="text-align:right;">
+29.15385
+</td>
+<td style="text-align:right;">
+16.420750
+</td>
+<td style="text-align:right;">
+9.615385
+</td>
+<td style="text-align:right;">
+5.515712
+</td>
+<td style="text-align:right;">
+1.5384615
+</td>
+<td style="text-align:right;">
+1.3913653
+</td>
+<td style="text-align:right;">
+7.0769231
+</td>
+<td style="text-align:right;">
+5.5596993
+</td>
+<td style="text-align:right;">
+4.076923
+</td>
+<td style="text-align:right;">
+6.224435
+</td>
+<td style="text-align:right;">
+8.384615
+</td>
+<td style="text-align:right;">
+6.739664
+</td>
+<td style="text-align:right;">
+4.8461538
+</td>
+<td style="text-align:right;">
+12.150762
+</td>
+<td style="text-align:right;">
+28.153846
+</td>
+<td style="text-align:right;">
+44.914449
+</td>
+<td style="text-align:right;">
+6.000000
+</td>
+<td style="text-align:right;">
+4.546061
+</td>
+<td style="text-align:right;">
+6.6153846
+</td>
+<td style="text-align:right;">
+3.686427
+</td>
+</tr>
+</tbody>
+</table>
 <p>Or use the scoped variant of <code>summarize</code>,
 <code>summarize_all</code>:</p>
-<pre class="r"><code>df %&gt;%
+<pre class="r"><code>formatted_table(df %&gt;%
   group_by(Category) %&gt;%
-  summarize_all(list(mean = mean, sd = sd))</code></pre>
-<pre><code>## # A tibble: 9 × 47
-##   Category    Item_mean `Serving Size_mean` Calories_mean Calories from Fat_me…¹
-##   &lt;chr&gt;           &lt;dbl&gt;               &lt;dbl&gt;         &lt;dbl&gt;                  &lt;dbl&gt;
-## 1 Beef &amp; Pork        NA                  NA          494                 225.   
-## 2 Beverages          NA                  NA          114.                  0.741
-## 3 Breakfast          NA                  NA          527.                249.   
-## 4 Chicken &amp; …        NA                  NA          553.                242.   
-## 5 Coffee &amp; T…        NA                  NA          284.                 71.1  
-## 6 Desserts           NA                  NA          222.                 64.3  
-## 7 Salads             NA                  NA          270                 108.   
-## 8 Smoothies …        NA                  NA          531.                128.   
-## 9 Snacks &amp; S…        NA                  NA          246.                 94.6  
-## # ℹ abbreviated name: ¹​`Calories from Fat_mean`
-## # ℹ 42 more variables: `Total Fat_mean` &lt;dbl&gt;,
-## #   `Total Fat (% Daily Value)_mean` &lt;dbl&gt;, `Saturated Fat_mean` &lt;dbl&gt;,
-## #   `Saturated Fat (% Daily Value)_mean` &lt;dbl&gt;, `Trans Fat_mean` &lt;dbl&gt;,
-## #   Cholesterol_mean &lt;dbl&gt;, `Cholesterol (% Daily Value)_mean` &lt;dbl&gt;,
-## #   Sodium_mean &lt;dbl&gt;, `Sodium (% Daily Value)_mean` &lt;dbl&gt;,
-## #   Carbohydrates_mean &lt;dbl&gt;, `Carbohydrates (% Daily Value)_mean` &lt;dbl&gt;, …</code></pre>
+  summarize_all(list(mean = mean, sd = sd)))</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Category
+</th>
+<th style="text-align:right;">
+Item_mean
+</th>
+<th style="text-align:right;">
+Serving Size_mean
+</th>
+<th style="text-align:right;">
+Calories_mean
+</th>
+<th style="text-align:right;">
+Calories from Fat_mean
+</th>
+<th style="text-align:right;">
+Total Fat_mean
+</th>
+<th style="text-align:right;">
+Total Fat (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Saturated Fat_mean
+</th>
+<th style="text-align:right;">
+Saturated Fat (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Trans Fat_mean
+</th>
+<th style="text-align:right;">
+Cholesterol_mean
+</th>
+<th style="text-align:right;">
+Cholesterol (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Sodium_mean
+</th>
+<th style="text-align:right;">
+Sodium (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Carbohydrates_mean
+</th>
+<th style="text-align:right;">
+Carbohydrates (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Dietary Fiber_mean
+</th>
+<th style="text-align:right;">
+Dietary Fiber (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Sugars_mean
+</th>
+<th style="text-align:right;">
+Protein_mean
+</th>
+<th style="text-align:right;">
+Vitamin A (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Vitamin C (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Calcium (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Iron (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Item_sd
+</th>
+<th style="text-align:right;">
+Serving Size_sd
+</th>
+<th style="text-align:right;">
+Calories_sd
+</th>
+<th style="text-align:right;">
+Calories from Fat_sd
+</th>
+<th style="text-align:right;">
+Total Fat_sd
+</th>
+<th style="text-align:right;">
+Total Fat (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Saturated Fat_sd
+</th>
+<th style="text-align:right;">
+Saturated Fat (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Trans Fat_sd
+</th>
+<th style="text-align:right;">
+Cholesterol_sd
+</th>
+<th style="text-align:right;">
+Cholesterol (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Sodium_sd
+</th>
+<th style="text-align:right;">
+Sodium (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Carbohydrates_sd
+</th>
+<th style="text-align:right;">
+Carbohydrates (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Dietary Fiber_sd
+</th>
+<th style="text-align:right;">
+Dietary Fiber (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Sugars_sd
+</th>
+<th style="text-align:right;">
+Protein_sd
+</th>
+<th style="text-align:right;">
+Vitamin A (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Vitamin C (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Calcium (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Iron (% Daily Value)_sd
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Beef &amp; Pork
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+494.0000
+</td>
+<td style="text-align:right;">
+224.6666667
+</td>
+<td style="text-align:right;">
+24.8666667
+</td>
+<td style="text-align:right;">
+38.6000000
+</td>
+<td style="text-align:right;">
+10.4666667
+</td>
+<td style="text-align:right;">
+52.0000000
+</td>
+<td style="text-align:right;">
+1.1000000
+</td>
+<td style="text-align:right;">
+87.3333333
+</td>
+<td style="text-align:right;">
+28.9333333
+</td>
+<td style="text-align:right;">
+1020.66667
+</td>
+<td style="text-align:right;">
+42.466667
+</td>
+<td style="text-align:right;">
+40.13333
+</td>
+<td style="text-align:right;">
+13.466667
+</td>
+<td style="text-align:right;">
+2.5333333
+</td>
+<td style="text-align:right;">
+9.8666667
+</td>
+<td style="text-align:right;">
+8.800000
+</td>
+<td style="text-align:right;">
+27.333333
+</td>
+<td style="text-align:right;">
+6.9333333
+</td>
+<td style="text-align:right;">
+7.333333
+</td>
+<td style="text-align:right;">
+23.000000
+</td>
+<td style="text-align:right;">
+23.3333333
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+141.36073
+</td>
+<td style="text-align:right;">
+82.710050
+</td>
+<td style="text-align:right;">
+9.2494530
+</td>
+<td style="text-align:right;">
+14.2267354
+</td>
+<td style="text-align:right;">
+3.8334369
+</td>
+<td style="text-align:right;">
+19.127392
+</td>
+<td style="text-align:right;">
+0.6324555
+</td>
+<td style="text-align:right;">
+29.752951
+</td>
+<td style="text-align:right;">
+9.7940701
+</td>
+<td style="text-align:right;">
+267.67429
+</td>
+<td style="text-align:right;">
+11.096117
+</td>
+<td style="text-align:right;">
+6.412785
+</td>
+<td style="text-align:right;">
+2.133631
+</td>
+<td style="text-align:right;">
+0.7432234
+</td>
+<td style="text-align:right;">
+2.8751812
+</td>
+<td style="text-align:right;">
+2.366432
+</td>
+<td style="text-align:right;">
+9.574271
+</td>
+<td style="text-align:right;">
+2.604026
+</td>
+<td style="text-align:right;">
+7.403345
+</td>
+<td style="text-align:right;">
+5.916080
+</td>
+<td style="text-align:right;">
+5.875697
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Beverages
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+113.7037
+</td>
+<td style="text-align:right;">
+0.7407407
+</td>
+<td style="text-align:right;">
+0.0925926
+</td>
+<td style="text-align:right;">
+0.1481481
+</td>
+<td style="text-align:right;">
+0.0555556
+</td>
+<td style="text-align:right;">
+0.2962963
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.5555556
+</td>
+<td style="text-align:right;">
+0.1851852
+</td>
+<td style="text-align:right;">
+41.48148
+</td>
+<td style="text-align:right;">
+1.740741
+</td>
+<td style="text-align:right;">
+28.81481
+</td>
+<td style="text-align:right;">
+9.592593
+</td>
+<td style="text-align:right;">
+0.0370370
+</td>
+<td style="text-align:right;">
+0.0740741
+</td>
+<td style="text-align:right;">
+27.851852
+</td>
+<td style="text-align:right;">
+1.333333
+</td>
+<td style="text-align:right;">
+0.7407407
+</td>
+<td style="text-align:right;">
+23.481482
+</td>
+<td style="text-align:right;">
+2.962963
+</td>
+<td style="text-align:right;">
+0.2962963
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+99.19476
+</td>
+<td style="text-align:right;">
+3.849002
+</td>
+<td style="text-align:right;">
+0.4811252
+</td>
+<td style="text-align:right;">
+0.7698004
+</td>
+<td style="text-align:right;">
+0.2886751
+</td>
+<td style="text-align:right;">
+1.539601
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+2.118296
+</td>
+<td style="text-align:right;">
+0.6814598
+</td>
+<td style="text-align:right;">
+43.43020
+</td>
+<td style="text-align:right;">
+1.893158
+</td>
+<td style="text-align:right;">
+26.091609
+</td>
+<td style="text-align:right;">
+8.710115
+</td>
+<td style="text-align:right;">
+0.1924501
+</td>
+<td style="text-align:right;">
+0.3849002
+</td>
+<td style="text-align:right;">
+25.440283
+</td>
+<td style="text-align:right;">
+2.449490
+</td>
+<td style="text-align:right;">
+2.668803
+</td>
+<td style="text-align:right;">
+60.519781
+</td>
+<td style="text-align:right;">
+8.083609
+</td>
+<td style="text-align:right;">
+1.539601
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Breakfast
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+526.6667
+</td>
+<td style="text-align:right;">
+248.9285714
+</td>
+<td style="text-align:right;">
+27.6904762
+</td>
+<td style="text-align:right;">
+42.6666667
+</td>
+<td style="text-align:right;">
+10.6547619
+</td>
+<td style="text-align:right;">
+53.4285714
+</td>
+<td style="text-align:right;">
+0.1071429
+</td>
+<td style="text-align:right;">
+152.8571429
+</td>
+<td style="text-align:right;">
+50.9523810
+</td>
+<td style="text-align:right;">
+1211.07143
+</td>
+<td style="text-align:right;">
+50.500000
+</td>
+<td style="text-align:right;">
+49.76190
+</td>
+<td style="text-align:right;">
+16.571429
+</td>
+<td style="text-align:right;">
+3.2619048
+</td>
+<td style="text-align:right;">
+12.8333333
+</td>
+<td style="text-align:right;">
+8.261905
+</td>
+<td style="text-align:right;">
+19.857143
+</td>
+<td style="text-align:right;">
+6.9285714
+</td>
+<td style="text-align:right;">
+8.904762
+</td>
+<td style="text-align:right;">
+16.166667
+</td>
+<td style="text-align:right;">
+17.1428571
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+221.67507
+</td>
+<td style="text-align:right;">
+119.784032
+</td>
+<td style="text-align:right;">
+13.3407282
+</td>
+<td style="text-align:right;">
+20.5351177
+</td>
+<td style="text-align:right;">
+4.7620042
+</td>
+<td style="text-align:right;">
+23.898304
+</td>
+<td style="text-align:right;">
+0.3226361
+</td>
+<td style="text-align:right;">
+171.482570
+</td>
+<td style="text-align:right;">
+57.2469841
+</td>
+<td style="text-align:right;">
+509.52337
+</td>
+<td style="text-align:right;">
+21.238770
+</td>
+<td style="text-align:right;">
+23.443559
+</td>
+<td style="text-align:right;">
+7.837194
+</td>
+<td style="text-align:right;">
+1.3978995
+</td>
+<td style="text-align:right;">
+5.9383691
+</td>
+<td style="text-align:right;">
+7.994082
+</td>
+<td style="text-align:right;">
+8.783497
+</td>
+<td style="text-align:right;">
+6.013776
+</td>
+<td style="text-align:right;">
+27.695037
+</td>
+<td style="text-align:right;">
+7.827147
+</td>
+<td style="text-align:right;">
+7.925173
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chicken &amp; Fish
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+552.9630
+</td>
+<td style="text-align:right;">
+242.2222222
+</td>
+<td style="text-align:right;">
+26.9629630
+</td>
+<td style="text-align:right;">
+41.3333333
+</td>
+<td style="text-align:right;">
+6.1666667
+</td>
+<td style="text-align:right;">
+31.1111111
+</td>
+<td style="text-align:right;">
+0.1296296
+</td>
+<td style="text-align:right;">
+75.3703704
+</td>
+<td style="text-align:right;">
+25.2222222
+</td>
+<td style="text-align:right;">
+1257.77778
+</td>
+<td style="text-align:right;">
+52.333333
+</td>
+<td style="text-align:right;">
+49.07407
+</td>
+<td style="text-align:right;">
+16.333333
+</td>
+<td style="text-align:right;">
+2.9259259
+</td>
+<td style="text-align:right;">
+11.8148148
+</td>
+<td style="text-align:right;">
+7.333333
+</td>
+<td style="text-align:right;">
+29.111111
+</td>
+<td style="text-align:right;">
+20.4444444
+</td>
+<td style="text-align:right;">
+12.629630
+</td>
+<td style="text-align:right;">
+15.444444
+</td>
+<td style="text-align:right;">
+16.3703704
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+306.54169
+</td>
+<td style="text-align:right;">
+187.479914
+</td>
+<td style="text-align:right;">
+20.8612292
+</td>
+<td style="text-align:right;">
+32.2788333
+</td>
+<td style="text-align:right;">
+3.6899031
+</td>
+<td style="text-align:right;">
+18.721303
+</td>
+<td style="text-align:right;">
+0.2628466
+</td>
+<td style="text-align:right;">
+45.908059
+</td>
+<td style="text-align:right;">
+15.4056267
+</td>
+<td style="text-align:right;">
+584.34930
+</td>
+<td style="text-align:right;">
+24.447747
+</td>
+<td style="text-align:right;">
+18.853537
+</td>
+<td style="text-align:right;">
+6.275716
+</td>
+<td style="text-align:right;">
+1.1410496
+</td>
+<td style="text-align:right;">
+4.9461488
+</td>
+<td style="text-align:right;">
+4.531938
+</td>
+<td style="text-align:right;">
+14.765691
+</td>
+<td style="text-align:right;">
+27.159548
+</td>
+<td style="text-align:right;">
+8.362683
+</td>
+<td style="text-align:right;">
+8.550004
+</td>
+<td style="text-align:right;">
+5.616926
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Coffee &amp; Tea
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+283.8947
+</td>
+<td style="text-align:right;">
+71.1052632
+</td>
+<td style="text-align:right;">
+8.0210526
+</td>
+<td style="text-align:right;">
+12.3578947
+</td>
+<td style="text-align:right;">
+4.9210526
+</td>
+<td style="text-align:right;">
+24.3684211
+</td>
+<td style="text-align:right;">
+0.1421053
+</td>
+<td style="text-align:right;">
+27.2631579
+</td>
+<td style="text-align:right;">
+9.3789474
+</td>
+<td style="text-align:right;">
+136.89474
+</td>
+<td style="text-align:right;">
+5.726316
+</td>
+<td style="text-align:right;">
+44.52632
+</td>
+<td style="text-align:right;">
+14.863158
+</td>
+<td style="text-align:right;">
+0.7789474
+</td>
+<td style="text-align:right;">
+3.1789474
+</td>
+<td style="text-align:right;">
+39.610526
+</td>
+<td style="text-align:right;">
+8.863158
+</td>
+<td style="text-align:right;">
+10.7368421
+</td>
+<td style="text-align:right;">
+0.000000
+</td>
+<td style="text-align:right;">
+28.294737
+</td>
+<td style="text-align:right;">
+2.1473684
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+157.81281
+</td>
+<td style="text-align:right;">
+67.189708
+</td>
+<td style="text-align:right;">
+7.4444452
+</td>
+<td style="text-align:right;">
+11.4908991
+</td>
+<td style="text-align:right;">
+4.6758295
+</td>
+<td style="text-align:right;">
+23.292338
+</td>
+<td style="text-align:right;">
+0.3472013
+</td>
+<td style="text-align:right;">
+22.547449
+</td>
+<td style="text-align:right;">
+7.5303343
+</td>
+<td style="text-align:right;">
+74.07651
+</td>
+<td style="text-align:right;">
+3.109498
+</td>
+<td style="text-align:right;">
+23.553399
+</td>
+<td style="text-align:right;">
+7.850478
+</td>
+<td style="text-align:right;">
+0.6219213
+</td>
+<td style="text-align:right;">
+2.6496846
+</td>
+<td style="text-align:right;">
+22.353207
+</td>
+<td style="text-align:right;">
+5.519040
+</td>
+<td style="text-align:right;">
+6.109307
+</td>
+<td style="text-align:right;">
+0.000000
+</td>
+<td style="text-align:right;">
+17.623651
+</td>
+<td style="text-align:right;">
+2.547291
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Desserts
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+222.1429
+</td>
+<td style="text-align:right;">
+64.2857143
+</td>
+<td style="text-align:right;">
+7.3571429
+</td>
+<td style="text-align:right;">
+11.1428571
+</td>
+<td style="text-align:right;">
+4.2857143
+</td>
+<td style="text-align:right;">
+21.2857143
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+15.0000000
+</td>
+<td style="text-align:right;">
+4.8571429
+</td>
+<td style="text-align:right;">
+117.14286
+</td>
+<td style="text-align:right;">
+5.000000
+</td>
+<td style="text-align:right;">
+34.85714
+</td>
+<td style="text-align:right;">
+11.571429
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+3.4285714
+</td>
+<td style="text-align:right;">
+26.142857
+</td>
+<td style="text-align:right;">
+4.000000
+</td>
+<td style="text-align:right;">
+5.1428571
+</td>
+<td style="text-align:right;">
+4.142857
+</td>
+<td style="text-align:right;">
+11.428571
+</td>
+<td style="text-align:right;">
+4.0000000
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+108.08396
+</td>
+<td style="text-align:right;">
+30.472470
+</td>
+<td style="text-align:right;">
+3.4965970
+</td>
+<td style="text-align:right;">
+5.1777914
+</td>
+<td style="text-align:right;">
+2.2334044
+</td>
+<td style="text-align:right;">
+11.041049
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+11.547005
+</td>
+<td style="text-align:right;">
+3.7606990
+</td>
+<td style="text-align:right;">
+55.06490
+</td>
+<td style="text-align:right;">
+2.160247
+</td>
+<td style="text-align:right;">
+19.591057
+</td>
+<td style="text-align:right;">
+6.654751
+</td>
+<td style="text-align:right;">
+1.4142136
+</td>
+<td style="text-align:right;">
+5.3184316
+</td>
+<td style="text-align:right;">
+18.224787
+</td>
+<td style="text-align:right;">
+2.886751
+</td>
+<td style="text-align:right;">
+3.436499
+</td>
+<td style="text-align:right;">
+9.317163
+</td>
+<td style="text-align:right;">
+11.282097
+</td>
+<td style="text-align:right;">
+3.829708
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Salads
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+270.0000
+</td>
+<td style="text-align:right;">
+108.3333333
+</td>
+<td style="text-align:right;">
+11.7500000
+</td>
+<td style="text-align:right;">
+18.3333333
+</td>
+<td style="text-align:right;">
+3.7500000
+</td>
+<td style="text-align:right;">
+18.5000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+51.6666667
+</td>
+<td style="text-align:right;">
+17.3333333
+</td>
+<td style="text-align:right;">
+588.33333
+</td>
+<td style="text-align:right;">
+24.500000
+</td>
+<td style="text-align:right;">
+21.66667
+</td>
+<td style="text-align:right;">
+7.166667
+</td>
+<td style="text-align:right;">
+4.5000000
+</td>
+<td style="text-align:right;">
+18.5000000
+</td>
+<td style="text-align:right;">
+6.833333
+</td>
+<td style="text-align:right;">
+19.833333
+</td>
+<td style="text-align:right;">
+146.6666667
+</td>
+<td style="text-align:right;">
+28.333333
+</td>
+<td style="text-align:right;">
+15.000000
+</td>
+<td style="text-align:right;">
+10.3333333
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+127.43626
+</td>
+<td style="text-align:right;">
+64.935866
+</td>
+<td style="text-align:right;">
+7.6664855
+</td>
+<td style="text-align:right;">
+11.5700763
+</td>
+<td style="text-align:right;">
+1.4404860
+</td>
+<td style="text-align:right;">
+7.007139
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+29.097537
+</td>
+<td style="text-align:right;">
+9.7502137
+</td>
+<td style="text-align:right;">
+295.39239
+</td>
+<td style="text-align:right;">
+12.243366
+</td>
+<td style="text-align:right;">
+12.484657
+</td>
+<td style="text-align:right;">
+4.119061
+</td>
+<td style="text-align:right;">
+2.4289916
+</td>
+<td style="text-align:right;">
+8.8034084
+</td>
+<td style="text-align:right;">
+3.371449
+</td>
+<td style="text-align:right;">
+9.806461
+</td>
+<td style="text-align:right;">
+32.659863
+</td>
+<td style="text-align:right;">
+2.581989
+</td>
+<td style="text-align:right;">
+0.000000
+</td>
+<td style="text-align:right;">
+3.829708
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smoothies &amp; Shakes
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+531.4286
+</td>
+<td style="text-align:right;">
+127.6785714
+</td>
+<td style="text-align:right;">
+14.1250000
+</td>
+<td style="text-align:right;">
+21.7142857
+</td>
+<td style="text-align:right;">
+8.3750000
+</td>
+<td style="text-align:right;">
+41.7857143
+</td>
+<td style="text-align:right;">
+0.5357143
+</td>
+<td style="text-align:right;">
+45.0000000
+</td>
+<td style="text-align:right;">
+14.7142857
+</td>
+<td style="text-align:right;">
+183.57143
+</td>
+<td style="text-align:right;">
+7.785714
+</td>
+<td style="text-align:right;">
+90.42857
+</td>
+<td style="text-align:right;">
+30.142857
+</td>
+<td style="text-align:right;">
+1.4642857
+</td>
+<td style="text-align:right;">
+5.7500000
+</td>
+<td style="text-align:right;">
+77.892857
+</td>
+<td style="text-align:right;">
+10.857143
+</td>
+<td style="text-align:right;">
+18.7500000
+</td>
+<td style="text-align:right;">
+6.964286
+</td>
+<td style="text-align:right;">
+35.571429
+</td>
+<td style="text-align:right;">
+3.9642857
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+230.87137
+</td>
+<td style="text-align:right;">
+93.209065
+</td>
+<td style="text-align:right;">
+10.3714574
+</td>
+<td style="text-align:right;">
+15.8484890
+</td>
+<td style="text-align:right;">
+6.3357086
+</td>
+<td style="text-align:right;">
+31.687545
+</td>
+<td style="text-align:right;">
+0.4893036
+</td>
+<td style="text-align:right;">
+32.289202
+</td>
+<td style="text-align:right;">
+10.7938842
+</td>
+<td style="text-align:right;">
+110.88747
+</td>
+<td style="text-align:right;">
+4.693235
+</td>
+<td style="text-align:right;">
+30.887404
+</td>
+<td style="text-align:right;">
+10.229638
+</td>
+<td style="text-align:right;">
+1.4005857
+</td>
+<td style="text-align:right;">
+5.3860244
+</td>
+<td style="text-align:right;">
+25.772997
+</td>
+<td style="text-align:right;">
+6.132574
+</td>
+<td style="text-align:right;">
+13.096861
+</td>
+<td style="text-align:right;">
+13.267845
+</td>
+<td style="text-align:right;">
+21.753550
+</td>
+<td style="text-align:right;">
+4.041288
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Snacks &amp; Sides
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+245.7692
+</td>
+<td style="text-align:right;">
+94.6153846
+</td>
+<td style="text-align:right;">
+10.5384615
+</td>
+<td style="text-align:right;">
+16.2307692
+</td>
+<td style="text-align:right;">
+2.6923077
+</td>
+<td style="text-align:right;">
+13.3846154
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+18.4615385
+</td>
+<td style="text-align:right;">
+6.2307692
+</td>
+<td style="text-align:right;">
+395.76923
+</td>
+<td style="text-align:right;">
+16.461538
+</td>
+<td style="text-align:right;">
+29.15385
+</td>
+<td style="text-align:right;">
+9.615385
+</td>
+<td style="text-align:right;">
+1.5384615
+</td>
+<td style="text-align:right;">
+7.0769231
+</td>
+<td style="text-align:right;">
+4.076923
+</td>
+<td style="text-align:right;">
+8.384615
+</td>
+<td style="text-align:right;">
+4.8461538
+</td>
+<td style="text-align:right;">
+28.153846
+</td>
+<td style="text-align:right;">
+6.000000
+</td>
+<td style="text-align:right;">
+6.6153846
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+141.77221
+</td>
+<td style="text-align:right;">
+67.652961
+</td>
+<td style="text-align:right;">
+7.5566239
+</td>
+<td style="text-align:right;">
+11.4684629
+</td>
+<td style="text-align:right;">
+1.7974341
+</td>
+<td style="text-align:right;">
+9.197268
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+20.349510
+</td>
+<td style="text-align:right;">
+6.8209707
+</td>
+<td style="text-align:right;">
+333.96511
+</td>
+<td style="text-align:right;">
+13.973877
+</td>
+<td style="text-align:right;">
+16.420750
+</td>
+<td style="text-align:right;">
+5.515712
+</td>
+<td style="text-align:right;">
+1.3913653
+</td>
+<td style="text-align:right;">
+5.5596993
+</td>
+<td style="text-align:right;">
+6.224435
+</td>
+<td style="text-align:right;">
+6.739664
+</td>
+<td style="text-align:right;">
+12.150762
+</td>
+<td style="text-align:right;">
+44.914449
+</td>
+<td style="text-align:right;">
+4.546061
+</td>
+<td style="text-align:right;">
+3.686427
+</td>
+</tr>
+</tbody>
+</table>
 <p>If you want to omit the colums that can not be calculated (and yield
 NA’s):</p>
-<pre class="r"><code>df %&gt;%
+<pre class="r"><code>formatted_table(df %&gt;%
   group_by(Category) %&gt;%
-  summarize(across(-c(`Item`, `Serving Size`), list(mean = mean, sd = sd)))</code></pre>
-<pre><code>## # A tibble: 9 × 43
-##   Category           Calories_mean Calories_sd `Calories from Fat_mean`
-##   &lt;chr&gt;                      &lt;dbl&gt;       &lt;dbl&gt;                    &lt;dbl&gt;
-## 1 Beef &amp; Pork                 494        141.                   225.   
-## 2 Beverages                   114.        99.2                    0.741
-## 3 Breakfast                   527.       222.                   249.   
-## 4 Chicken &amp; Fish              553.       307.                   242.   
-## 5 Coffee &amp; Tea                284.       158.                    71.1  
-## 6 Desserts                    222.       108.                    64.3  
-## 7 Salads                      270        127.                   108.   
-## 8 Smoothies &amp; Shakes          531.       231.                   128.   
-## 9 Snacks &amp; Sides              246.       142.                    94.6  
-## # ℹ 39 more variables: `Calories from Fat_sd` &lt;dbl&gt;, `Total Fat_mean` &lt;dbl&gt;,
-## #   `Total Fat_sd` &lt;dbl&gt;, `Total Fat (% Daily Value)_mean` &lt;dbl&gt;,
-## #   `Total Fat (% Daily Value)_sd` &lt;dbl&gt;, `Saturated Fat_mean` &lt;dbl&gt;,
-## #   `Saturated Fat_sd` &lt;dbl&gt;, `Saturated Fat (% Daily Value)_mean` &lt;dbl&gt;,
-## #   `Saturated Fat (% Daily Value)_sd` &lt;dbl&gt;, `Trans Fat_mean` &lt;dbl&gt;,
-## #   `Trans Fat_sd` &lt;dbl&gt;, Cholesterol_mean &lt;dbl&gt;, Cholesterol_sd &lt;dbl&gt;,
-## #   `Cholesterol (% Daily Value)_mean` &lt;dbl&gt;, …</code></pre>
+  summarize(across(-c(`Item`, `Serving Size`), list(mean = mean, sd = sd))))</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Category
+</th>
+<th style="text-align:right;">
+Calories_mean
+</th>
+<th style="text-align:right;">
+Calories_sd
+</th>
+<th style="text-align:right;">
+Calories from Fat_mean
+</th>
+<th style="text-align:right;">
+Calories from Fat_sd
+</th>
+<th style="text-align:right;">
+Total Fat_mean
+</th>
+<th style="text-align:right;">
+Total Fat_sd
+</th>
+<th style="text-align:right;">
+Total Fat (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Total Fat (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Saturated Fat_mean
+</th>
+<th style="text-align:right;">
+Saturated Fat_sd
+</th>
+<th style="text-align:right;">
+Saturated Fat (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Saturated Fat (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Trans Fat_mean
+</th>
+<th style="text-align:right;">
+Trans Fat_sd
+</th>
+<th style="text-align:right;">
+Cholesterol_mean
+</th>
+<th style="text-align:right;">
+Cholesterol_sd
+</th>
+<th style="text-align:right;">
+Cholesterol (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Cholesterol (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Sodium_mean
+</th>
+<th style="text-align:right;">
+Sodium_sd
+</th>
+<th style="text-align:right;">
+Sodium (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Sodium (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Carbohydrates_mean
+</th>
+<th style="text-align:right;">
+Carbohydrates_sd
+</th>
+<th style="text-align:right;">
+Carbohydrates (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Carbohydrates (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Dietary Fiber_mean
+</th>
+<th style="text-align:right;">
+Dietary Fiber_sd
+</th>
+<th style="text-align:right;">
+Dietary Fiber (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Dietary Fiber (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Sugars_mean
+</th>
+<th style="text-align:right;">
+Sugars_sd
+</th>
+<th style="text-align:right;">
+Protein_mean
+</th>
+<th style="text-align:right;">
+Protein_sd
+</th>
+<th style="text-align:right;">
+Vitamin A (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Vitamin A (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Vitamin C (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Vitamin C (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Calcium (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Calcium (% Daily Value)_sd
+</th>
+<th style="text-align:right;">
+Iron (% Daily Value)_mean
+</th>
+<th style="text-align:right;">
+Iron (% Daily Value)_sd
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Beef &amp; Pork
+</td>
+<td style="text-align:right;">
+494.0000
+</td>
+<td style="text-align:right;">
+141.36073
+</td>
+<td style="text-align:right;">
+224.6666667
+</td>
+<td style="text-align:right;">
+82.710050
+</td>
+<td style="text-align:right;">
+24.8666667
+</td>
+<td style="text-align:right;">
+9.2494530
+</td>
+<td style="text-align:right;">
+38.6000000
+</td>
+<td style="text-align:right;">
+14.2267354
+</td>
+<td style="text-align:right;">
+10.4666667
+</td>
+<td style="text-align:right;">
+3.8334369
+</td>
+<td style="text-align:right;">
+52.0000000
+</td>
+<td style="text-align:right;">
+19.127392
+</td>
+<td style="text-align:right;">
+1.1000000
+</td>
+<td style="text-align:right;">
+0.6324555
+</td>
+<td style="text-align:right;">
+87.3333333
+</td>
+<td style="text-align:right;">
+29.752951
+</td>
+<td style="text-align:right;">
+28.9333333
+</td>
+<td style="text-align:right;">
+9.7940701
+</td>
+<td style="text-align:right;">
+1020.66667
+</td>
+<td style="text-align:right;">
+267.67429
+</td>
+<td style="text-align:right;">
+42.466667
+</td>
+<td style="text-align:right;">
+11.096117
+</td>
+<td style="text-align:right;">
+40.13333
+</td>
+<td style="text-align:right;">
+6.412785
+</td>
+<td style="text-align:right;">
+13.466667
+</td>
+<td style="text-align:right;">
+2.133631
+</td>
+<td style="text-align:right;">
+2.5333333
+</td>
+<td style="text-align:right;">
+0.7432234
+</td>
+<td style="text-align:right;">
+9.8666667
+</td>
+<td style="text-align:right;">
+2.8751812
+</td>
+<td style="text-align:right;">
+8.800000
+</td>
+<td style="text-align:right;">
+2.366432
+</td>
+<td style="text-align:right;">
+27.333333
+</td>
+<td style="text-align:right;">
+9.574271
+</td>
+<td style="text-align:right;">
+6.9333333
+</td>
+<td style="text-align:right;">
+2.604026
+</td>
+<td style="text-align:right;">
+7.333333
+</td>
+<td style="text-align:right;">
+7.403345
+</td>
+<td style="text-align:right;">
+23.000000
+</td>
+<td style="text-align:right;">
+5.916080
+</td>
+<td style="text-align:right;">
+23.3333333
+</td>
+<td style="text-align:right;">
+5.875697
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Beverages
+</td>
+<td style="text-align:right;">
+113.7037
+</td>
+<td style="text-align:right;">
+99.19476
+</td>
+<td style="text-align:right;">
+0.7407407
+</td>
+<td style="text-align:right;">
+3.849002
+</td>
+<td style="text-align:right;">
+0.0925926
+</td>
+<td style="text-align:right;">
+0.4811252
+</td>
+<td style="text-align:right;">
+0.1481481
+</td>
+<td style="text-align:right;">
+0.7698004
+</td>
+<td style="text-align:right;">
+0.0555556
+</td>
+<td style="text-align:right;">
+0.2886751
+</td>
+<td style="text-align:right;">
+0.2962963
+</td>
+<td style="text-align:right;">
+1.539601
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.5555556
+</td>
+<td style="text-align:right;">
+2.118296
+</td>
+<td style="text-align:right;">
+0.1851852
+</td>
+<td style="text-align:right;">
+0.6814598
+</td>
+<td style="text-align:right;">
+41.48148
+</td>
+<td style="text-align:right;">
+43.43020
+</td>
+<td style="text-align:right;">
+1.740741
+</td>
+<td style="text-align:right;">
+1.893158
+</td>
+<td style="text-align:right;">
+28.81481
+</td>
+<td style="text-align:right;">
+26.091609
+</td>
+<td style="text-align:right;">
+9.592593
+</td>
+<td style="text-align:right;">
+8.710115
+</td>
+<td style="text-align:right;">
+0.0370370
+</td>
+<td style="text-align:right;">
+0.1924501
+</td>
+<td style="text-align:right;">
+0.0740741
+</td>
+<td style="text-align:right;">
+0.3849002
+</td>
+<td style="text-align:right;">
+27.851852
+</td>
+<td style="text-align:right;">
+25.440283
+</td>
+<td style="text-align:right;">
+1.333333
+</td>
+<td style="text-align:right;">
+2.449490
+</td>
+<td style="text-align:right;">
+0.7407407
+</td>
+<td style="text-align:right;">
+2.668803
+</td>
+<td style="text-align:right;">
+23.481482
+</td>
+<td style="text-align:right;">
+60.519781
+</td>
+<td style="text-align:right;">
+2.962963
+</td>
+<td style="text-align:right;">
+8.083609
+</td>
+<td style="text-align:right;">
+0.2962963
+</td>
+<td style="text-align:right;">
+1.539601
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Breakfast
+</td>
+<td style="text-align:right;">
+526.6667
+</td>
+<td style="text-align:right;">
+221.67507
+</td>
+<td style="text-align:right;">
+248.9285714
+</td>
+<td style="text-align:right;">
+119.784032
+</td>
+<td style="text-align:right;">
+27.6904762
+</td>
+<td style="text-align:right;">
+13.3407282
+</td>
+<td style="text-align:right;">
+42.6666667
+</td>
+<td style="text-align:right;">
+20.5351177
+</td>
+<td style="text-align:right;">
+10.6547619
+</td>
+<td style="text-align:right;">
+4.7620042
+</td>
+<td style="text-align:right;">
+53.4285714
+</td>
+<td style="text-align:right;">
+23.898304
+</td>
+<td style="text-align:right;">
+0.1071429
+</td>
+<td style="text-align:right;">
+0.3226361
+</td>
+<td style="text-align:right;">
+152.8571429
+</td>
+<td style="text-align:right;">
+171.482570
+</td>
+<td style="text-align:right;">
+50.9523810
+</td>
+<td style="text-align:right;">
+57.2469841
+</td>
+<td style="text-align:right;">
+1211.07143
+</td>
+<td style="text-align:right;">
+509.52337
+</td>
+<td style="text-align:right;">
+50.500000
+</td>
+<td style="text-align:right;">
+21.238770
+</td>
+<td style="text-align:right;">
+49.76190
+</td>
+<td style="text-align:right;">
+23.443559
+</td>
+<td style="text-align:right;">
+16.571429
+</td>
+<td style="text-align:right;">
+7.837194
+</td>
+<td style="text-align:right;">
+3.2619048
+</td>
+<td style="text-align:right;">
+1.3978995
+</td>
+<td style="text-align:right;">
+12.8333333
+</td>
+<td style="text-align:right;">
+5.9383691
+</td>
+<td style="text-align:right;">
+8.261905
+</td>
+<td style="text-align:right;">
+7.994082
+</td>
+<td style="text-align:right;">
+19.857143
+</td>
+<td style="text-align:right;">
+8.783497
+</td>
+<td style="text-align:right;">
+6.9285714
+</td>
+<td style="text-align:right;">
+6.013776
+</td>
+<td style="text-align:right;">
+8.904762
+</td>
+<td style="text-align:right;">
+27.695037
+</td>
+<td style="text-align:right;">
+16.166667
+</td>
+<td style="text-align:right;">
+7.827147
+</td>
+<td style="text-align:right;">
+17.1428571
+</td>
+<td style="text-align:right;">
+7.925173
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chicken &amp; Fish
+</td>
+<td style="text-align:right;">
+552.9630
+</td>
+<td style="text-align:right;">
+306.54169
+</td>
+<td style="text-align:right;">
+242.2222222
+</td>
+<td style="text-align:right;">
+187.479914
+</td>
+<td style="text-align:right;">
+26.9629630
+</td>
+<td style="text-align:right;">
+20.8612292
+</td>
+<td style="text-align:right;">
+41.3333333
+</td>
+<td style="text-align:right;">
+32.2788333
+</td>
+<td style="text-align:right;">
+6.1666667
+</td>
+<td style="text-align:right;">
+3.6899031
+</td>
+<td style="text-align:right;">
+31.1111111
+</td>
+<td style="text-align:right;">
+18.721303
+</td>
+<td style="text-align:right;">
+0.1296296
+</td>
+<td style="text-align:right;">
+0.2628466
+</td>
+<td style="text-align:right;">
+75.3703704
+</td>
+<td style="text-align:right;">
+45.908059
+</td>
+<td style="text-align:right;">
+25.2222222
+</td>
+<td style="text-align:right;">
+15.4056267
+</td>
+<td style="text-align:right;">
+1257.77778
+</td>
+<td style="text-align:right;">
+584.34930
+</td>
+<td style="text-align:right;">
+52.333333
+</td>
+<td style="text-align:right;">
+24.447747
+</td>
+<td style="text-align:right;">
+49.07407
+</td>
+<td style="text-align:right;">
+18.853537
+</td>
+<td style="text-align:right;">
+16.333333
+</td>
+<td style="text-align:right;">
+6.275716
+</td>
+<td style="text-align:right;">
+2.9259259
+</td>
+<td style="text-align:right;">
+1.1410496
+</td>
+<td style="text-align:right;">
+11.8148148
+</td>
+<td style="text-align:right;">
+4.9461488
+</td>
+<td style="text-align:right;">
+7.333333
+</td>
+<td style="text-align:right;">
+4.531938
+</td>
+<td style="text-align:right;">
+29.111111
+</td>
+<td style="text-align:right;">
+14.765691
+</td>
+<td style="text-align:right;">
+20.4444444
+</td>
+<td style="text-align:right;">
+27.159548
+</td>
+<td style="text-align:right;">
+12.629630
+</td>
+<td style="text-align:right;">
+8.362683
+</td>
+<td style="text-align:right;">
+15.444444
+</td>
+<td style="text-align:right;">
+8.550004
+</td>
+<td style="text-align:right;">
+16.3703704
+</td>
+<td style="text-align:right;">
+5.616926
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Coffee &amp; Tea
+</td>
+<td style="text-align:right;">
+283.8947
+</td>
+<td style="text-align:right;">
+157.81281
+</td>
+<td style="text-align:right;">
+71.1052632
+</td>
+<td style="text-align:right;">
+67.189708
+</td>
+<td style="text-align:right;">
+8.0210526
+</td>
+<td style="text-align:right;">
+7.4444452
+</td>
+<td style="text-align:right;">
+12.3578947
+</td>
+<td style="text-align:right;">
+11.4908991
+</td>
+<td style="text-align:right;">
+4.9210526
+</td>
+<td style="text-align:right;">
+4.6758295
+</td>
+<td style="text-align:right;">
+24.3684211
+</td>
+<td style="text-align:right;">
+23.292338
+</td>
+<td style="text-align:right;">
+0.1421053
+</td>
+<td style="text-align:right;">
+0.3472013
+</td>
+<td style="text-align:right;">
+27.2631579
+</td>
+<td style="text-align:right;">
+22.547449
+</td>
+<td style="text-align:right;">
+9.3789474
+</td>
+<td style="text-align:right;">
+7.5303343
+</td>
+<td style="text-align:right;">
+136.89474
+</td>
+<td style="text-align:right;">
+74.07651
+</td>
+<td style="text-align:right;">
+5.726316
+</td>
+<td style="text-align:right;">
+3.109498
+</td>
+<td style="text-align:right;">
+44.52632
+</td>
+<td style="text-align:right;">
+23.553399
+</td>
+<td style="text-align:right;">
+14.863158
+</td>
+<td style="text-align:right;">
+7.850478
+</td>
+<td style="text-align:right;">
+0.7789474
+</td>
+<td style="text-align:right;">
+0.6219213
+</td>
+<td style="text-align:right;">
+3.1789474
+</td>
+<td style="text-align:right;">
+2.6496846
+</td>
+<td style="text-align:right;">
+39.610526
+</td>
+<td style="text-align:right;">
+22.353207
+</td>
+<td style="text-align:right;">
+8.863158
+</td>
+<td style="text-align:right;">
+5.519040
+</td>
+<td style="text-align:right;">
+10.7368421
+</td>
+<td style="text-align:right;">
+6.109307
+</td>
+<td style="text-align:right;">
+0.000000
+</td>
+<td style="text-align:right;">
+0.000000
+</td>
+<td style="text-align:right;">
+28.294737
+</td>
+<td style="text-align:right;">
+17.623651
+</td>
+<td style="text-align:right;">
+2.1473684
+</td>
+<td style="text-align:right;">
+2.547291
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Desserts
+</td>
+<td style="text-align:right;">
+222.1429
+</td>
+<td style="text-align:right;">
+108.08396
+</td>
+<td style="text-align:right;">
+64.2857143
+</td>
+<td style="text-align:right;">
+30.472470
+</td>
+<td style="text-align:right;">
+7.3571429
+</td>
+<td style="text-align:right;">
+3.4965970
+</td>
+<td style="text-align:right;">
+11.1428571
+</td>
+<td style="text-align:right;">
+5.1777914
+</td>
+<td style="text-align:right;">
+4.2857143
+</td>
+<td style="text-align:right;">
+2.2334044
+</td>
+<td style="text-align:right;">
+21.2857143
+</td>
+<td style="text-align:right;">
+11.041049
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+15.0000000
+</td>
+<td style="text-align:right;">
+11.547005
+</td>
+<td style="text-align:right;">
+4.8571429
+</td>
+<td style="text-align:right;">
+3.7606990
+</td>
+<td style="text-align:right;">
+117.14286
+</td>
+<td style="text-align:right;">
+55.06490
+</td>
+<td style="text-align:right;">
+5.000000
+</td>
+<td style="text-align:right;">
+2.160247
+</td>
+<td style="text-align:right;">
+34.85714
+</td>
+<td style="text-align:right;">
+19.591057
+</td>
+<td style="text-align:right;">
+11.571429
+</td>
+<td style="text-align:right;">
+6.654751
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+<td style="text-align:right;">
+1.4142136
+</td>
+<td style="text-align:right;">
+3.4285714
+</td>
+<td style="text-align:right;">
+5.3184316
+</td>
+<td style="text-align:right;">
+26.142857
+</td>
+<td style="text-align:right;">
+18.224787
+</td>
+<td style="text-align:right;">
+4.000000
+</td>
+<td style="text-align:right;">
+2.886751
+</td>
+<td style="text-align:right;">
+5.1428571
+</td>
+<td style="text-align:right;">
+3.436499
+</td>
+<td style="text-align:right;">
+4.142857
+</td>
+<td style="text-align:right;">
+9.317163
+</td>
+<td style="text-align:right;">
+11.428571
+</td>
+<td style="text-align:right;">
+11.282097
+</td>
+<td style="text-align:right;">
+4.0000000
+</td>
+<td style="text-align:right;">
+3.829708
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Salads
+</td>
+<td style="text-align:right;">
+270.0000
+</td>
+<td style="text-align:right;">
+127.43626
+</td>
+<td style="text-align:right;">
+108.3333333
+</td>
+<td style="text-align:right;">
+64.935866
+</td>
+<td style="text-align:right;">
+11.7500000
+</td>
+<td style="text-align:right;">
+7.6664855
+</td>
+<td style="text-align:right;">
+18.3333333
+</td>
+<td style="text-align:right;">
+11.5700763
+</td>
+<td style="text-align:right;">
+3.7500000
+</td>
+<td style="text-align:right;">
+1.4404860
+</td>
+<td style="text-align:right;">
+18.5000000
+</td>
+<td style="text-align:right;">
+7.007139
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+51.6666667
+</td>
+<td style="text-align:right;">
+29.097537
+</td>
+<td style="text-align:right;">
+17.3333333
+</td>
+<td style="text-align:right;">
+9.7502137
+</td>
+<td style="text-align:right;">
+588.33333
+</td>
+<td style="text-align:right;">
+295.39239
+</td>
+<td style="text-align:right;">
+24.500000
+</td>
+<td style="text-align:right;">
+12.243366
+</td>
+<td style="text-align:right;">
+21.66667
+</td>
+<td style="text-align:right;">
+12.484657
+</td>
+<td style="text-align:right;">
+7.166667
+</td>
+<td style="text-align:right;">
+4.119061
+</td>
+<td style="text-align:right;">
+4.5000000
+</td>
+<td style="text-align:right;">
+2.4289916
+</td>
+<td style="text-align:right;">
+18.5000000
+</td>
+<td style="text-align:right;">
+8.8034084
+</td>
+<td style="text-align:right;">
+6.833333
+</td>
+<td style="text-align:right;">
+3.371449
+</td>
+<td style="text-align:right;">
+19.833333
+</td>
+<td style="text-align:right;">
+9.806461
+</td>
+<td style="text-align:right;">
+146.6666667
+</td>
+<td style="text-align:right;">
+32.659863
+</td>
+<td style="text-align:right;">
+28.333333
+</td>
+<td style="text-align:right;">
+2.581989
+</td>
+<td style="text-align:right;">
+15.000000
+</td>
+<td style="text-align:right;">
+0.000000
+</td>
+<td style="text-align:right;">
+10.3333333
+</td>
+<td style="text-align:right;">
+3.829708
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Smoothies &amp; Shakes
+</td>
+<td style="text-align:right;">
+531.4286
+</td>
+<td style="text-align:right;">
+230.87137
+</td>
+<td style="text-align:right;">
+127.6785714
+</td>
+<td style="text-align:right;">
+93.209065
+</td>
+<td style="text-align:right;">
+14.1250000
+</td>
+<td style="text-align:right;">
+10.3714574
+</td>
+<td style="text-align:right;">
+21.7142857
+</td>
+<td style="text-align:right;">
+15.8484890
+</td>
+<td style="text-align:right;">
+8.3750000
+</td>
+<td style="text-align:right;">
+6.3357086
+</td>
+<td style="text-align:right;">
+41.7857143
+</td>
+<td style="text-align:right;">
+31.687545
+</td>
+<td style="text-align:right;">
+0.5357143
+</td>
+<td style="text-align:right;">
+0.4893036
+</td>
+<td style="text-align:right;">
+45.0000000
+</td>
+<td style="text-align:right;">
+32.289202
+</td>
+<td style="text-align:right;">
+14.7142857
+</td>
+<td style="text-align:right;">
+10.7938842
+</td>
+<td style="text-align:right;">
+183.57143
+</td>
+<td style="text-align:right;">
+110.88747
+</td>
+<td style="text-align:right;">
+7.785714
+</td>
+<td style="text-align:right;">
+4.693235
+</td>
+<td style="text-align:right;">
+90.42857
+</td>
+<td style="text-align:right;">
+30.887404
+</td>
+<td style="text-align:right;">
+30.142857
+</td>
+<td style="text-align:right;">
+10.229638
+</td>
+<td style="text-align:right;">
+1.4642857
+</td>
+<td style="text-align:right;">
+1.4005857
+</td>
+<td style="text-align:right;">
+5.7500000
+</td>
+<td style="text-align:right;">
+5.3860244
+</td>
+<td style="text-align:right;">
+77.892857
+</td>
+<td style="text-align:right;">
+25.772997
+</td>
+<td style="text-align:right;">
+10.857143
+</td>
+<td style="text-align:right;">
+6.132574
+</td>
+<td style="text-align:right;">
+18.7500000
+</td>
+<td style="text-align:right;">
+13.096861
+</td>
+<td style="text-align:right;">
+6.964286
+</td>
+<td style="text-align:right;">
+13.267845
+</td>
+<td style="text-align:right;">
+35.571429
+</td>
+<td style="text-align:right;">
+21.753550
+</td>
+<td style="text-align:right;">
+3.9642857
+</td>
+<td style="text-align:right;">
+4.041288
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Snacks &amp; Sides
+</td>
+<td style="text-align:right;">
+245.7692
+</td>
+<td style="text-align:right;">
+141.77221
+</td>
+<td style="text-align:right;">
+94.6153846
+</td>
+<td style="text-align:right;">
+67.652961
+</td>
+<td style="text-align:right;">
+10.5384615
+</td>
+<td style="text-align:right;">
+7.5566239
+</td>
+<td style="text-align:right;">
+16.2307692
+</td>
+<td style="text-align:right;">
+11.4684629
+</td>
+<td style="text-align:right;">
+2.6923077
+</td>
+<td style="text-align:right;">
+1.7974341
+</td>
+<td style="text-align:right;">
+13.3846154
+</td>
+<td style="text-align:right;">
+9.197268
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+0.0000000
+</td>
+<td style="text-align:right;">
+18.4615385
+</td>
+<td style="text-align:right;">
+20.349510
+</td>
+<td style="text-align:right;">
+6.2307692
+</td>
+<td style="text-align:right;">
+6.8209707
+</td>
+<td style="text-align:right;">
+395.76923
+</td>
+<td style="text-align:right;">
+333.96511
+</td>
+<td style="text-align:right;">
+16.461538
+</td>
+<td style="text-align:right;">
+13.973877
+</td>
+<td style="text-align:right;">
+29.15385
+</td>
+<td style="text-align:right;">
+16.420750
+</td>
+<td style="text-align:right;">
+9.615385
+</td>
+<td style="text-align:right;">
+5.515712
+</td>
+<td style="text-align:right;">
+1.5384615
+</td>
+<td style="text-align:right;">
+1.3913653
+</td>
+<td style="text-align:right;">
+7.0769231
+</td>
+<td style="text-align:right;">
+5.5596993
+</td>
+<td style="text-align:right;">
+4.076923
+</td>
+<td style="text-align:right;">
+6.224435
+</td>
+<td style="text-align:right;">
+8.384615
+</td>
+<td style="text-align:right;">
+6.739664
+</td>
+<td style="text-align:right;">
+4.8461538
+</td>
+<td style="text-align:right;">
+12.150762
+</td>
+<td style="text-align:right;">
+28.153846
+</td>
+<td style="text-align:right;">
+44.914449
+</td>
+<td style="text-align:right;">
+6.000000
+</td>
+<td style="text-align:right;">
+4.546061
+</td>
+<td style="text-align:right;">
+6.6153846
+</td>
+<td style="text-align:right;">
+3.686427
+</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <blockquote>
 <p>This web page is distributed under the terms of the Creative Commons

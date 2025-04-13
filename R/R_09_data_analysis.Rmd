@@ -333,26 +333,26 @@ select all columns except `Item_mean` and `Serving Size_mean`.
 The summarise_each() function is deprecated in favour of the new across() function that works within summarise() and mutate().
 
 ```{r}
-df %>%
+formatted_table(df %>%
   group_by(Category) %>%
-  summarize(across(everything(), list(mean = mean, sd = sd)))
+  summarize(across(everything(), list(mean = mean, sd = sd))))
 ```
 
 Or use the scoped variant of `summarize`, `summarize_all`:
 
 ```{r}
-df %>%
+formatted_table(df %>%
   group_by(Category) %>%
-  summarize_all(list(mean = mean, sd = sd))
+  summarize_all(list(mean = mean, sd = sd)))
 ```
 
 If you want to omit the colums that can not be calculated (and yield NA's):
 
 
 ```{r}
-df %>%
+formatted_table(df %>%
   group_by(Category) %>%
-  summarize(across(-c(`Item`, `Serving Size`), list(mean = mean, sd = sd)))
+  summarize(across(-c(`Item`, `Serving Size`), list(mean = mean, sd = sd))))
 ```
 
 
