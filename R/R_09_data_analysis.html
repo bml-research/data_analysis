@@ -11597,8 +11597,9 @@ then, select all columns except <code>Item_mean</code> and
 </div>
 <div id="summarize-and-across" class="section level2">
 <h2>Summarize and across</h2>
-<p>The summarise_each() function is deprecated in favour of the new
-across() function that works within summarise() and mutate().</p>
+<p>The summarize_each() function is deprecated (will work, but not
+actively maintained anymore) in favor of the new across() function that
+works within summarize() and mutate().</p>
 <pre class="r"><code>formatted_table(df %&gt;%
   group_by(Category) %&gt;%
   summarize(across(everything(), list(mean = mean, sd = sd))))</code></pre>

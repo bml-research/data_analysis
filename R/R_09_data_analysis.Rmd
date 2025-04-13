@@ -330,7 +330,7 @@ select all columns except `Item_mean` and `Serving Size_mean`.
 
 ## Summarize and across
 
-The summarise_each() function is deprecated in favour of the new across() function that works within summarise() and mutate().
+The summarize_each() function is deprecated (will work, but not actively maintained anymore) in favor of the new across() function that works within summarize() and mutate().
 
 ```{r}
 formatted_table(df %>%
