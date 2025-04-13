@@ -29,23 +29,28 @@ As the differences in the values are rather high, it is wise to use a log scale 
 ### Exercise 3
 
 From the previous dataset, filter the data that contain oil in the name.  
-Create a clustered column chart representing the Emissions per kg from `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
+Create a clustered column chart representing the Emissions per kg from `Farm`, `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
 
 ### Exercise 4
 
 Use the same data as from exercise 3 to create a stacked column chart. Filter the data that contain oil in the name.  
-Create a stacked column chart representing the Emissions per kg from `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
+Create a stacked column chart representing the Emissions per kg from `Farm`, `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
 
 ### Exercise 5
 
 Use the same data as from exercise 3 to create a relative stacked column chart. Filter the data that contain oil in the name.  
-Create a relative stacked column chart representing the Emissions per kg from `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
+Create a relative stacked column chart representing the Emissions per kg from `Farm`, `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
 
 
 ### Exercise 6
 
-Use the same data as from exercise 3 to create a pie chart. Filter the data that contain oil in the name.  
-Create a pie chart representing the Emissions per kg from `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title, data labels and a legend.
+Use the same data to create a Pie chart. Filter the data that contain `palmoil` in the name.  
+Create a pie chart representing the Emissions per kg from `Farm`, `Processing`, `Transport`, `Packaging` and `Retail`.  
+Show the percentages as labels.
+
+Also create a Pie chart for all the oil types showing the Total Global Average GHG Emissions per kg. 
+Show the values as labels.  
+
 
 ### Exercise 7
 

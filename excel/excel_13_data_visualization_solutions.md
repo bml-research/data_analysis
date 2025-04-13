@@ -60,9 +60,11 @@ Or the figure below:
 
 See the Excel file [here](./files_13_data_visualization_solutions/exercise06/exercise06.xlsx) for the solution.
 
-Or the figure below:
+Or the figures below:
 
 ![figure](./files_13_data_visualization_solutions/exercise06/fig01.png)
+
+![figure](./files_13_data_visualization_solutions/exercise06/fig02.png)
 
 
 ### Exercise 7
