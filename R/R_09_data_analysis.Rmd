@@ -213,6 +213,10 @@ But the Tidyverse library also contains a summarize() function:
 formatted_table(summarize(df, Calories = mean(Calories)))
 ```
 
+>You may notice that there is a `summarize` and `summarise` function.
+>They call the same function. ummarise() and summarize() are synonyms for UK and USA spelling.
+
+
 You can combine this with the group_by() function for powerful analysis:
 
 ```{r}
@@ -252,7 +256,6 @@ round(2.40, digits = 1)
 round(2.45, digits = 1)
 round(2.45) #defaults to 0 digits
 round(2.5) #defaults to 0 digits
-?round
 ```
 
 >Note that for rounding off a 5, the IEC 60559 standard (see also ‘IEEE 754’) is expected to be used, ‘go to the even digit’. Therefore round(0.5) is 0 and round(-1.5) is -2.
@@ -290,32 +293,31 @@ print("standard error of the mean")
 sd(df$Calories)/sqrt(length(df$Calories)) #can also be calculated using the plotrix package
 ```
 
-## Summarize each
+## Summarize on multiple columns
 
-Using Tidyverse, you can also apply some of the above statistics more conveniently using the summarize_each function:
+Using Tidyverse, you can also apply some of the above statistics more conveniently on multiple columns:
 
 ```{r}
 by_category <- group_by(df, Category)
-formatted_table(summarize_each(by_category, funs(mean, sd, se=sd(.)/sqrt(n()))))
+formatted_table(summarize_each(by_category, funs(mean, sd)))
 ```
 
-Note that the `se=sd(.)/sqrt(n())` code is a custom made function to calculate the standard error of the mean.
 
 As you can see, Item_mean and Serving Size_mean are not informative. These were of the character type.
 So it is best to omit them:
 
 ```{r}
 by_category <- group_by(df, Category)
-formatted_table(summarize_each(by_category, funs(mean, sd, se=sd(.)/sqrt(n()))) %>%
+formatted_table(summarize_each(by_category, funs(mean, sd)) %>%
   select(-Item_mean, -`Serving Size_mean`))
 ```
 
-We could simplify this expression by using pipes.You can use %>% to emphasise a sequence of actions.
+We could simplify this expression by using pipes.You can use %>% to emphasize a sequence of actions.
 
 ```{r}
 formatted_table(df %>%
   group_by(Category) %>%
-  summarize_each(funs(mean, sd, se=sd(.)/sqrt(n()))) %>%
+  summarize_each(funs(mean, sd)) %>%
   select(-Item_mean, -`Serving Size_mean`))
 ```
 
@@ -323,9 +325,35 @@ Piping greatly reduces the complexity of your actions and prevents the creation 
 You can read it as:
 First take the data frame `df` then,
 group the data frame by the items in the column `Category` and then,
-summarize each `category` item for `mean`, `sd` and `se` and then,
+summarize each `category` item for `mean`, `sd` and then,
 select all columns except `Item_mean` and `Serving Size_mean`.
 
+## Summarize and across
+
+The summarise_each() function is deprecated in favour of the new across() function that works within summarise() and mutate().
+
+```{r}
+df %>%
+  group_by(Category) %>%
+  summarize(across(everything(), list(mean = mean, sd = sd)))
+```
+
+Or use the scoped variant of `summarize`, `summarize_all`:
+
+```{r}
+df %>%
+  group_by(Category) %>%
+  summarize_all(list(mean = mean, sd = sd))
+```
+
+If you want to omit the colums that can not be calculated (and yield NA's):
+
+
+```{r}
+df %>%
+  group_by(Category) %>%
+  summarize(across(-c(`Item`, `Serving Size`), list(mean = mean, sd = sd)))
+```
 
 
 ---
