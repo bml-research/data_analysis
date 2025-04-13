@@ -2872,6 +2872,115 @@ banana
 </tr>
 </tbody>
 </table>
+</div>
+<div id="separate-a-column-into-two-columns" class="section level3">
+<h3>Separate a column into two columns</h3>
+<p>Sometimes you will find that people put units in the cells from a
+column:</p>
+<pre class="r"><code>category &lt;- c(&quot;fruit&quot;, &quot;vegetable&quot;, &quot;vegetable&quot;, &quot;fruit&quot;)
+type &lt;- c(&quot;apple&quot;, &quot;broccoli&quot;, &quot;cauliflower&quot;, &quot;banana&quot;)
+calories &lt;- c(&quot;52.5 kcal&quot;, &quot;32.2 kcal&quot;, &quot;25.7 kcal&quot;, &quot;89.4 kcal&quot;)
+
+my_tibble &lt;- tibble(category, type, calories)
+formatted_table(my_tibble)</code></pre>
+<table class="table table-striped table-hover table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+category
+</th>
+<th style="text-align:left;">
+type
+</th>
+<th style="text-align:left;">
+calories
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+apple
+</td>
+<td style="text-align:left;">
+52.5 kcal
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+broccoli
+</td>
+<td style="text-align:left;">
+32.2 kcal
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vegetable
+</td>
+<td style="text-align:left;">
+cauliflower
+</td>
+<td style="text-align:left;">
+25.7 kcal
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fruit
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+89.4 kcal
+</td>
+</tr>
+</tbody>
+</table>
+<p>Of course, the column will be of character type. We can solve this
+using the <code>separate_wider_delim</code> function.</p>
+<pre class="r"><code>my_tibble &lt;- my_tibble %&gt;% 
+  separate_wider_delim(calories, delim = &quot; &quot;, names = c(&quot;calories&quot;, &quot;waste&quot;)) 
+my_tibble</code></pre>
+<pre><code>## # A tibble: 4 × 4
+##   category  type        calories waste
+##   &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;
+## 1 fruit     apple       52.5     kcal 
+## 2 vegetable broccoli    32.2     kcal 
+## 3 vegetable cauliflower 25.7     kcal 
+## 4 fruit     banana      89.4     kcal</code></pre>
+<p>And we can throw away the column named <code>waste</code>:</p>
+<pre class="r"><code>my_tibble &lt;- my_tibble %&gt;% select(-waste)
+my_tibble</code></pre>
+<pre><code>## # A tibble: 4 × 3
+##   category  type        calories
+##   &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;   
+## 1 fruit     apple       52.5    
+## 2 vegetable broccoli    32.2    
+## 3 vegetable cauliflower 25.7    
+## 4 fruit     banana      89.4</code></pre>
+<p>And change the data type of the <code>Calories (kcal)</code>
+column:</p>
+<pre class="r"><code>my_tibble &lt;- my_tibble %&gt;%
+  mutate(
+    calories = str_trim(calories), # will trim any whitespace
+    calories = as.numeric(calories)
+  )
+my_tibble</code></pre>
+<pre><code>## # A tibble: 4 × 3
+##   category  type        calories
+##   &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
+## 1 fruit     apple           52.5
+## 2 vegetable broccoli        32.2
+## 3 vegetable cauliflower     25.7
+## 4 fruit     banana          89.4</code></pre>
 <hr />
 <blockquote>
 <p>This web page is distributed under the terms of the Creative Commons

@@ -377,6 +377,47 @@ formatted_table(my_tibble_transposed)
 ```
 
 
+### Separate a column into two columns
+
+Sometimes you will find that people put units in the cells from a column:
+
+```{r}
+category <- c("fruit", "vegetable", "vegetable", "fruit")
+type <- c("apple", "broccoli", "cauliflower", "banana")
+calories <- c("52.5 kcal", "32.2 kcal", "25.7 kcal", "89.4 kcal")
+
+my_tibble <- tibble(category, type, calories)
+formatted_table(my_tibble)
+```
+
+Of course, the column will be of character type.
+We can solve this using the `separate_wider_delim` function.
+
+```{r}
+my_tibble <- my_tibble %>% 
+  separate_wider_delim(calories, delim = " ", names = c("calories", "waste")) 
+my_tibble
+```
+
+And we can throw away the column named `waste`:
+
+```{r}
+my_tibble <- my_tibble %>% select(-waste)
+my_tibble
+```
+
+And change the data type of the `Calories (kcal)` column:
+
+
+```{r}
+my_tibble <- my_tibble %>%
+  mutate(
+    calories = str_trim(calories), # will trim any whitespace
+    calories = as.numeric(calories)
+  )
+my_tibble
+```
+
 
 ---
 
