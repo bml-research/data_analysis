@@ -110,7 +110,7 @@ formatted_table(df_ex3)
 Make the df tidy:
 ```{r}
 tidy_df_ex3 <- df_ex3 %>%
-  gather(`Farm`, `Processing`, `Transport`, `Packaging`, `Retail`, key = "Emission origin", value = "Emission per kg")
+  pivot_longer(cols = c("Farm", "Processing", "Transport"), names_to = "Emission origin", values_to = "Emission per kg")
 formatted_table(head(tidy_df_ex3))
 ```
 
@@ -245,6 +245,7 @@ And add together:
 
 ```{r}
 df_ex8_mod <- cbind(first_col, df_ex8_scaled)
+df_ex8_mod <- df_ex8_mod %>% rename("Diet" = "...1")
 formatted_table(df_ex8_mod)
 ```
 
@@ -278,13 +279,18 @@ df_ex9 <- read_delim(file_path, delim=" ")
 df_ex9$...6 <- NULL
 formatted_table(head(df_ex9))
 ```
+
+
+And now create the plot:
+
+
 ```{r}
 p <- ggplot(df_ex9, aes(x = `Potassium_conc`, y = `Sodium_conc`)) + 
-  geom_point(aes(size = `Calories`), alpha = 0.5) +
-  scale_size(range = c(0.5, 12)) +
-  geom_text(aes(label=Item)) +
+  geom_point(aes(size = `Calories`), alpha = 0.5, color = "blue") +
+  scale_size_area(max_size = 10) +
+  geom_text(aes(label=Item), size = 3, vjust = -1.5) +
   xlab("Potassium concentration (mg/100 g)") +
-  ylab("Sodium concentration (mg/100 g)")
+  ylab("Sodium concentration (mg/100 g)") 
 p
 ```
 Spinach and Parsley are low Caloric and have a high Potassium concentration and low sodium concentration.
