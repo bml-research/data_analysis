@@ -161,6 +161,7 @@ nrow(df[df$Calories > 300 & df$Calories < 600, ])
 
 106 items
 
+
 How many items are measured in the serving size Fluid Ounce (fl oz cup) (hint: use a wildcard)
 
 ```{r}

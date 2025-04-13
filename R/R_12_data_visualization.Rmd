@@ -144,9 +144,11 @@ Plotting with ggplot2 is much more flexible and the plots created are very aesth
 Now if you would like to compare this to the total amount of calories, you could create a grouped bar chart for this.
 The first thing we do is to make the data tidy:
 
+
+
 ```{r}
 tidy_summ_data <- summ_data %>%
-  gather(`Calories total`, `Calories from Fat`, key = "Calories origin", value = "Amount of calories")
+  pivot_longer(`Calories total`:`Calories from Fat`, names_to = "Calories origin", values_to = "Amount of calories")
 formatted_table(head(tidy_summ_data))
 ```
 
@@ -351,7 +353,7 @@ p
 
 ## Grouped box plots
 
-If we want to compare for example the total calories to the calories from fat between different food categoeries, we need grouped box plots.
+If we want to compare for example the total calories to the calories from fat between different food categories, we need grouped box plots.
 First we need to make the data tidy again.
 
 But first we can just take the columns that we need:
@@ -365,7 +367,7 @@ And then make it tidy:
 
 ```{r}
 tidy_menu <- df_menu_trunc %>%
-  gather(`Calories total`, `Calories from Fat`, key = "Calories origin", value = "Amount of calories") 
+  pivot_longer(`Calories total`:`Calories from Fat`, names_to = "Calories origin", values_to = "Amount of calories")
 formatted_table(head(tidy_menu))
 ```
 
@@ -433,7 +435,7 @@ We first need to make the data tidy:
 
 ```{r}
 tidy_weight_loss <- weight_loss %>%
-  gather(`Diet 1`, `Diet 2`, `Diet 3`, key = "Diet", value = "Weight (kg)") 
+  pivot_longer(cols = starts_with("Diet"), names_to = "Diet", values_to = "Weight (kg)")
 formatted_table(head(tidy_weight_loss))
 ```
 
@@ -519,7 +521,7 @@ And now we can create a bubble chart:
 ```{r}
 p <- ggplot(bubble_data, aes(x = `Sugar Content (g/serving)`, y = `Vitamin C content (mg/serving)`)) + 
   geom_point(aes(color = Fruit, size = `Number of servings per year`), alpha = 0.5) +
-  scale_size(range = c(0.5, 12))
+  scale_size_area(max_size=10)
 p
 ```
 
