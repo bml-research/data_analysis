@@ -396,14 +396,14 @@ We can solve this using the `separate_wider_delim` function.
 ```{r}
 my_tibble <- my_tibble %>% 
   separate_wider_delim(calories, delim = " ", names = c("calories", "waste")) 
-my_tibble
+formatted_table(my_tibble)
 ```
 
 And we can throw away the column named `waste`:
 
 ```{r}
 my_tibble <- my_tibble %>% select(-waste)
-my_tibble
+formatted_table(my_tibble)
 ```
 
 And change the data type of the `Calories (kcal)` column:
@@ -415,7 +415,7 @@ my_tibble <- my_tibble %>%
     calories = str_trim(calories), # will trim any whitespace
     calories = as.numeric(calories)
   )
-my_tibble
+formatted_table(my_tibble)
 ```
 
 

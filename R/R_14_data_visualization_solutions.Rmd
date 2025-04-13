@@ -90,10 +90,11 @@ Note that this plot differs from the Excel counterpart. Here I calculated the 2l
 ### Exercise 3
 
 From the previous data set, filter the data that contain oil in the name.  
-Create a clustered column chart representing the Emissions per kg from `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
+Create a clustered column chart representing the Emissions per kg from `Farm`, `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
 
 
 First we create a df with the rows of Oil products:
+
 ```{r}
 df_ex3 <- df_ex1[str_detect(df_ex1$`Food product`, "Oil"), ]
 formatted_table(df_ex3)
@@ -101,8 +102,8 @@ formatted_table(df_ex3)
 Remove the columns that we do not need:
 
 ```{r}
-df_ex3$`Land Use Change` <- NULL
-df_ex3$Feed <- NULL
+df_ex3 <- df_ex3 %>%
+  select(-`Land Use Change`, -`Feed`)
 df_ex3 <- df_ex3[, 1:6]
 formatted_table(df_ex3)
 ```
@@ -110,7 +111,7 @@ formatted_table(df_ex3)
 Make the df tidy:
 ```{r}
 tidy_df_ex3 <- df_ex3 %>%
-  pivot_longer(cols = c("Farm", "Processing", "Transport"), names_to = "Emission origin", values_to = "Emission per kg")
+  pivot_longer(cols = c("Farm", "Processing", "Transport", "Packaging", "Retail"), names_to = "Emission origin", values_to = "Emission per kg")
 formatted_table(head(tidy_df_ex3))
 ```
 
@@ -128,7 +129,7 @@ p
 ### Exercise 4
 
 Use the same data as from exercise 3 to create a stacked column chart. Filter the data that contain oil in the name.  
-Create a stacked column chart representing the Emissions per kg from `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
+Create a stacked column chart representing the Emissions per kg from `Farm`, `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
 
 ```{r}
 p <- ggplot(data = tidy_df_ex3, aes(x = `Food product`, y = `Emission per kg`, fill = `Emission origin`)) +
@@ -143,7 +144,7 @@ p
 ### Exercise 5
 
 Use the same data as from exercise 3 to create a relative stacked column chart. Filter the data that contain oil in the name.  
-Create a relative stacked column chart representing the Emissions per kg from `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
+Create a relative stacked column chart representing the Emissions per kg from `Farm`, `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title and a legend.
 
 ```{r}
 p <- ggplot(data = tidy_df_ex3, aes(x = `Food product`, y = `Emission per kg`, fill = `Emission origin`)) +
@@ -156,15 +157,73 @@ p
 
 ### Exercise 6
 
-Use the same data as from exercise 3 to create a pie chart. Filter the data that contain oil in the name.  
-Create a pie chart representing the Emissions per kg from `Processing`, `Transport`, `Packaging` and `Retail`. Make sure to add proper axis titles, a title, data labels and a legend.
+Use the same data to create a Pie chart. Filter the data that contain `palmoil` in the name.  
+Create a pie chart representing the Emissions per kg from `Farm`, `Processing`, `Transport`, `Packaging` and `Retail`.  
+Show the percentages as labels.
+
+Filter for `palmoil` in `Food product`:
 
 ```{r}
-p <- ggplot(tidy_df_ex3, aes(x = "", y = `Emission per kg`, fill = `Emission origin`)) +
-  geom_bar(stat="identity", width=1) +
-  coord_polar("y", start=0) +
-  labs(title="Food Product Emissions") +
-  theme_void() # remove background, grid, numeric labels
+tidy_df_ex6 <- tidy_df_ex3 %>%
+  filter(str_detect(`Food product`, "Palm Oil"))
+formatted_table(head(tidy_df_ex6))
+```
+
+
+Calculate the percentages and add to new column:
+
+```{r}
+tidy_df_ex6$percentage <- tidy_df_ex6$`Emission per kg` / sum(tidy_df_ex6$`Emission per kg`) * 100
+formatted_table(head(tidy_df_ex6))
+```
+
+And create the Pie chart:
+
+
+```{r}
+p <- ggplot(tidy_df_ex6, aes(x = "", y = `Emission per kg`, fill = `Emission origin`)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  labs(title = "Food Product Emissions") +
+  theme_void() +
+  geom_text(aes(label = paste0(round(percentage, 1), "%")), position = position_stack(vjust = 0.5), size = 3)
+p
+```
+
+Also create a Pie chart for all the oil types showing the Total Global Average GHG Emissions per kg. 
+Show the percentages as labels.  
+
+Get the required rows:
+
+```{r}
+df_ex6_2 <- df_ex3 <- df_ex1[str_detect(df_ex1$`Food product`, "Oil"), ]
+formatted_table(df_ex6_2)
+```
+
+And columns:
+
+```{r}
+df_ex6_2 <- df_ex6_2 %>%
+  select(`Food product`, `Total Global Average GHG Emissions per kg`)
+formatted_table(df_ex6_2)
+```
+
+Calculate the percentages and add to new column:
+
+```{r}
+df_ex6_2$percentage <- df_ex6_2$`Total Global Average GHG Emissions per kg` / sum(df_ex6_2$`Total Global Average GHG Emissions per kg`) * 100
+formatted_table(head(df_ex6_2))
+```
+
+And create the Pie chart:
+
+```{r}
+p <- ggplot(df_ex6_2, aes(x = "", y = `Total Global Average GHG Emissions per kg`, fill = `Food product`)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  labs(title = "Food Product Emissions") +
+  theme_void() +
+  geom_text(aes(label = paste0(round(percentage, 1), "%")), position = position_stack(vjust = 0.5), size = 3)
 p
 ```
 
@@ -241,6 +300,7 @@ Grab the first column:
 first_col <- df_ex8[, 1]
 formatted_table(first_col)
 ```
+
 And add together:
 
 ```{r}

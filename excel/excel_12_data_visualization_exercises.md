@@ -49,7 +49,7 @@ Create a pie chart representing the Emissions per kg from `Farm`, `Processing`, 
 Show the percentages as labels.
 
 Also create a Pie chart for all the oil types showing the Total Global Average GHG Emissions per kg. 
-Show the values as labels.  
+Show the percentages as labels.  
 
 
 ### Exercise 7
