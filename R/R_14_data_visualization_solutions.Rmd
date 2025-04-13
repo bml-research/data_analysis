@@ -186,7 +186,7 @@ p <- ggplot(tidy_df_ex6, aes(x = "", y = `Emission per kg`, fill = `Emission ori
   coord_polar("y", start = 0) +
   labs(title = "Food Product Emissions") +
   theme_void() +
-  geom_text(aes(label = paste0(round(percentage, 1), "%")), position = position_stack(vjust = 0.5), size = 3)
+  geom_text(aes(label = paste0(round(percentage, 0), "%")), position = position_stack(vjust = 0.5), size = 3)
 p
 ```
 
@@ -223,7 +223,7 @@ p <- ggplot(df_ex6_2, aes(x = "", y = `Total Global Average GHG Emissions per kg
   coord_polar("y", start = 0) +
   labs(title = "Food Product Emissions") +
   theme_void() +
-  geom_text(aes(label = paste0(round(percentage, 1), "%")), position = position_stack(vjust = 0.5), size = 3)
+  geom_text(aes(label = paste0(round(percentage, 0), "%")), position = position_stack(vjust = 0.5), size = 3)
 p
 ```
 
