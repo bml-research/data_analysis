@@ -16,7 +16,7 @@
 Now that the data is imported and cleaned. It is time to analyze the data.  
 This means that, depending on your specific question, you can do all sorts of calculations using Excel formulas (you can even create custom formulas), sort data, perform conditional formatting and create pivot tables. The creation of plots will be dealt with in the next chapter.
 
-## How to organise your worksheet
+## How to organize your worksheet
 
 Lets first discuss how to organize a worksheet.
 [Nutrition facts data](https://www.kaggle.com/datasets/mcdonalds/nutrition-facts) from a fastfood restaurant was imported using the csv import function in Excel:
@@ -115,6 +115,16 @@ So to summarize:
 >In Microsoft Excel, a function is a built-in formula that is designed to perform a specific calculation. Arguments go in the function. This can be the value of one cell or a range of cells. Excel performs the calculation and the result will be returned in the cell where the formula was typed.
 
 This is the standard behavior of Excel but some functions in Excel are array functions. And they behave a bit different.
+
+## Named ranges
+
+When you separate the analysis from the data, selecting ranges will be quite cumbersome. Either you need to click another worksheet first and then create the selection or you need to type a lot (the name of the worksheet plus the range).
+
+>Note that you can easily create a selection of a whole column by clicking the first cell. Then hit `Ctrl` + `Shift` + `Downarrow`. 
+
+Instead of typing or clicking a lot you can assign variable names to selections and store them in memory. See [this link](https://support.microsoft.com/en-us/office/create-a-named-range-from-selected-cells-in-an-excel-worksheet-fd8905ed-1130-4cca-9bb0-ad02b7e594fd). On the `Formulas` tab, you can click the Name Manager to get an overview of the assigned selections and also rename them.
+
+>When you import csv files using Power Query, Excel will automatically assign a selection name for the whole table. You can rename this selection under Formulas > Name Manager.
 
 ## Array formulas
 
