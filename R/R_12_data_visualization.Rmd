@@ -249,7 +249,8 @@ The same holds for pie of pie charts. This chart type is not supported out of th
 
 ## Radar Charts
 
-Like Excel, radar charts can be created in R. The same data set will be used as shown in the Excel section.
+Like Excel, radar charts can be created in R. The same data set will be used as shown in the Excel section.  
+The data can be downloaded [here](./files_12_data_visualization/file02_radar_data.csv).
 
 ```{r}
 file_path <- "./files_12_data_visualization/file02_radar_data.csv"
@@ -331,7 +332,9 @@ That was actually quite a lot of work...
 
 Fortunately, creating box plots in ggplots2 is easier.
 
-We will take the same data set as earlier:
+We will take the same data set as earlier:  
+
+Data can be downloaded [here](./files_12_data_visualization/file01_menu.csv).
 
 ```{r}
 file_path <- "./files_12_data_visualization/file01_menu.csv"
@@ -417,7 +420,10 @@ p
 ## Line plots
 
 
-As an example, we take the same (fictive data) about a weight loss program for 3 individuals (taking 3 different diets) as used in the Excel section.
+As an example, we take the same (fictive data) about a weight loss program for 3 individuals (taking 3 different diets) as used in the Excel section.  
+
+You can download it [here](./files_12_data_visualization/file03_weight_loss.xlsx).
+
 The data is as follows:
 
 
@@ -504,8 +510,8 @@ p
 ## Bubble chart
 
 Like Excel, ggplot2 also supports bubble charts:
-
 First we will load the same data:
+You can download it [here](./files_12_data_visualization/file04_bubble_chart.xlsx).
 
 
 ```{r}
