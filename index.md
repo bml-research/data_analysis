@@ -36,9 +36,9 @@ Tijdens de gehele keten van ontwikkeling, opwerking en productie van voedingsing
 - [Data sets](./data_sets/data_sets.md)
 
 
-## Link naar voorbeeld opdracht
+## Link naar voorbeeld portfolio
 
-- [Hier is een voorbeeld eindopdracht met uitwerkingen te vinden](./example_assignment/example_assignment.md)
+- [Hier is een opdrachtbeschrijving van een eindopdracht met voorbeeld portfolio te vinden](./example_assignment/example_assignment.md)
 
 ## Overige analyses
 
