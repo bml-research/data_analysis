@@ -38,7 +38,7 @@ Tijdens de gehele keten van ontwikkeling, opwerking en productie van voedingsing
 
 ## Link naar voorbeeld portfolio
 
-- [Hier is een opdrachtbeschrijving van een eindopdracht met voorbeeld portfolio te vinden](./example_assignment/example_assignment.md)
+- [Hier is een opdrachtbeschrijving van een eindopdracht met voorbeeld portfolio te vinden](./portfolio_example/01_example_portfolio.md)
 
 ## Overige analyses
 
