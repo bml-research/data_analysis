@@ -43,6 +43,7 @@ Tijdens de gehele keten van ontwikkeling, opwerking en productie van voedingsing
 ## Overige analyses
 
 - [Prijs van diverse soorten spijsolie in de tijd](./other_analysis/edible_oil/oil_analysis.html)
+- [Analyse anti-microbiële activiteit van anthocyanen uit bloemen en fruit](./example_assignment/example_assignment.md)
 
 
 ## Installeren van MS Excel, R en RStudio 
