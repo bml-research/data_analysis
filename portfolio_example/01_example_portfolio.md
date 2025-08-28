@@ -65,6 +65,7 @@ Good luck!
 
 - [Checklist](./01_checklist/checklist_data_analysis_portfolio.xlsx)
 - [Example portfolio](./02_example_portfolio/voorbeeld_portfolio.zip)
+- [Grading form](./03_grading_form/beoordelingsformulier_dgv_dav.xlsx)
 
 
 >This web page is distributed under the terms of the Creative Commons Attribution License which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
